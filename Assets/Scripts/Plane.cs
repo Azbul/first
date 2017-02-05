@@ -35,24 +35,21 @@ public class Plane: MonoBehaviour {
 		//camtr.eulerAngles = Vector3.Lerp(camtr.eulerAngles, new Vector3(90, thisTr.eulerAngles.y, 0), 1*Time.deltaTime); //relaise camera rotation with Vector3
 		camtr.rotation = Quaternion.Lerp(camtr.rotation, Quaternion.Euler(90, thisTr.rotation.eulerAngles.y, 0), camrotSmooth*Time.deltaTime);
 
+		////////////////////////////////
 		if(Input.GetKey(KeyCode.RightArrow))
 			{
 			stabiling = false;
 			thisTr.Rotate(Vector3.up, rotSpeed*Time.deltaTime);
-			//planeAnim.Play("RightRotate");
 			if (planeTrans.rotation.eulerAngles.z < 30 || planeTrans.rotation.eulerAngles.z > 327) 
 				{
 				planeTrans.Rotate(0, 0, 1);
 				}
 			}
 
-		//Debug.Log(planeTrans.rotation.eulerAngles.z);
-
 		if(Input.GetKey(KeyCode.LeftArrow))
 			{
 			stabiling = false;
 			thisTr.Rotate(Vector3.up, -rotSpeed*Time.deltaTime);
-			//planeAnim.Play("RightRotate");
 			if (planeTrans.rotation.eulerAngles.z > 330 || planeTrans.rotation.eulerAngles.z < 33) 
 				{
 				planeTrans.Rotate(0, 0, -1);
@@ -72,6 +69,8 @@ public class Plane: MonoBehaviour {
 				}
 			}
 		}
+
+	   
 
 	public virtual void SetDamage(float damage, string name)
 		{

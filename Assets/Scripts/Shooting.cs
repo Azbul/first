@@ -31,6 +31,7 @@ public class Shooting : MonoBehaviour {
 			{
 			if(Input.GetKey(KeyCode.Space))
 				{
+				// --- 2 BSP REALISATION ---
 				if(secondBsp)
 					{
 					if(bsp == bulletSpawnPointTwo)
@@ -42,7 +43,8 @@ public class Shooting : MonoBehaviour {
 					}
 				else 
 					{ bsp = bulletSpawnPoint; }
-		        Shoot(bullet, bsp);
+		       // ---  END 2 BSP R-N  ---
+				Shoot(bullet, bsp);
 				shootinterTimer = 0f;
 
 
@@ -67,12 +69,6 @@ public class Shooting : MonoBehaviour {
 					}*/
 
 				}
-			}
-
-
-		if(Input.GetKeyUp(KeyCode.Space))
-			{
-			shootinterTimer = 0;
 			}
 		}
 

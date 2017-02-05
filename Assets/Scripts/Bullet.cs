@@ -10,14 +10,14 @@ public class Bullet : MonoBehaviour {
 		tr = transform;
 	}
 	
-	// Update is called once per frame
+
 	void Update () {
 		tr.Translate(Vector3.forward*speed*Time.deltaTime);
 	}
 
 	void OnCollisionEnter(Collision col)
 		{
-
+		
 		Plane planeScript = col.gameObject.GetComponent<Plane>();
 		if(planeScript)
 			{
