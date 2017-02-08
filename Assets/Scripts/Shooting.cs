@@ -7,15 +7,10 @@ public class Shooting : MonoBehaviour {
 	public enum Weapons { gun, hardGun, rocket, secondRocket }
 	
 	public Weapons weaponSelect;
-	[Tooltip("false - only first bsp")]
-	public bool secondBsp;
-	public Transform bulletSpawnPoint;
-	public Transform bulletSpawnPointTwo;
-	public Transform bullet;
-	public float shootInterval;
-
 	public GunSetting gun;
+	public GunSetting hardGun;
 
+	private float shootInterval = 0.1f;
 	private string thisName;
 	private float shootinterTimer = 0f;
 	private Transform bsp;
@@ -37,26 +32,40 @@ public class Shooting : MonoBehaviour {
 			{
 			if(Input.GetKey(KeyCode.Space))
 				{
-				// --- 2 BSP REALISATION ---
-				if(gun.twoBsp)
+				switch (weaponSelect)
 					{
-					if(bsp == bulletSpawnPointTwo)
-						{
-						bsp = null;
-						}
-					if(bsp == null) bsp = bulletSpawnPoint;
-					else bsp = bulletSpawnPointTwo;
+					case Weapons.gun : ShootRealisation(gun.shell, gun.firstBsp, gun.secondBsp, gun.twoBsp,  gun.interval); 
+						break;
+					case Weapons.hardGun : ShootRealisation(hardGun.shell, hardGun.firstBsp, hardGun.secondBsp, hardGun.twoBsp,  hardGun.interval); 
+						break;
 					}
-				else 
-					{ bsp = bulletSpawnPoint; }
-		       // ---  END 2 BSP R-N  ---
-
-				Shoot(bullet, bsp);
-				shootinterTimer = 0f;
+				
+				}
+			}
+		}
 
 
-//        ---   THIS IS SECOND REALISATION OF SHOOTING   ---
-				/* if(shootinterTimer == 0f)
+	void ShootRealisation(Transform bullet, Transform bspone, Transform bsptwo, bool twobsp, float Interval)
+		{
+		// --- 2 BSP REALISATION ---
+		if(twobsp)
+			{
+			if(bsp == bsptwo)
+				{
+				bsp = null;
+				}
+			if(bsp == null) bsp = bspone;
+			else bsp = bsptwo;
+			}
+		else 
+			{ bsp = bspone; }
+		// ---  END 2 BSP R-N  ---
+		shootInterval = Interval;
+		Shoot(bullet, bsp);
+		shootinterTimer = 0f;
+
+		//        ---   THIS IS SECOND REALISATION OF SHOOTING   ---
+		/* if(shootinterTimer == 0f)
 					{
 					if(bsp == null) bsp = bulletSpawnPoint;
 					else bsp = bulletSpawnPointTwo;
@@ -74,11 +83,7 @@ public class Shooting : MonoBehaviour {
 						}
 					shootinterTimer = 0f;
 					}*/
-
-				}
-			}
 		}
-
 
 
 	void Shoot(Transform bullet, Transform bulletSpawnPoint)
@@ -88,6 +93,7 @@ public class Shooting : MonoBehaviour {
 		}
 }
 
+
 [Serializable]
 public class GunSetting
 	{
@@ -95,5 +101,6 @@ public class GunSetting
 	public float interval;
 	public Transform firstBsp;
 	public Transform secondBsp;
+	[Tooltip("false - only first bsp")]
 	public bool twoBsp;
 	}

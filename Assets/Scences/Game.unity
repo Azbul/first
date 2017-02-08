@@ -150,7 +150,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 100
   speed: 15
-  rotSpeed: 70
+  rotSpeed: 90
   camfollowSmooth: 500
   camrotSmooth: 0.8
   camHeight: 50
@@ -194,17 +194,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponSelect: 0
-  secondBsp: 1
-  bulletSpawnPoint: {fileID: 94244736}
-  bulletSpawnPointTwo: {fileID: 1238543293}
-  bullet: {fileID: 4000010732676768, guid: 63185e00ca227cd4fa0696abd5f5b8d6, type: 2}
-  shootInterval: 0.15
   gun:
     shell: {fileID: 4000010732676768, guid: 63185e00ca227cd4fa0696abd5f5b8d6, type: 2}
     interval: 0.15
     firstBsp: {fileID: 94244736}
     secondBsp: {fileID: 1238543293}
     twoBsp: 1
+  hardGun:
+    shell: {fileID: 4000010732676768, guid: 63185e00ca227cd4fa0696abd5f5b8d6, type: 2}
+    interval: 0.5
+    firstBsp: {fileID: 94244736}
+    secondBsp: {fileID: 0}
+    twoBsp: 0
 --- !u!1 &258610497
 GameObject:
   m_ObjectHideFlags: 0
