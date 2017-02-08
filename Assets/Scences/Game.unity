@@ -37,7 +37,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4469998, g: 0.4972734, b: 0.57602847, a: 1}
+  m_IndirectSpecularColor: {r: 0.44711834, g: 0.49739373, b: 0.57615477, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -193,11 +193,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8434058b44d34bd449d4829cc65f23d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weaponSelect: 0
   secondBsp: 1
   bulletSpawnPoint: {fileID: 94244736}
   bulletSpawnPointTwo: {fileID: 1238543293}
   bullet: {fileID: 4000010732676768, guid: 63185e00ca227cd4fa0696abd5f5b8d6, type: 2}
   shootInterval: 0.15
+  gun:
+    shell: {fileID: 4000010732676768, guid: 63185e00ca227cd4fa0696abd5f5b8d6, type: 2}
+    interval: 0.15
+    firstBsp: {fileID: 94244736}
+    secondBsp: {fileID: 1238543293}
+    twoBsp: 1
 --- !u!1 &258610497
 GameObject:
   m_ObjectHideFlags: 0
@@ -773,7 +780,7 @@ Transform:
   m_GameObject: {fileID: 1992033491}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 20, z: 177.31}
-  m_LocalScale: {x: 1.5429832, y: 1.5429837, z: 1.5429837}
+  m_LocalScale: {x: 5.5115476, y: 5.5115504, z: 5.5115504}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
@@ -866,7 +873,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1999507588}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 20, z: 166.21}
+  m_LocalPosition: {x: -20, y: 20, z: 199.9}
   m_LocalScale: {x: 25.058249, y: 6.092465, z: 5.967701}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []

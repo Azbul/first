@@ -1,14 +1,20 @@
 ﻿using UnityEngine;
+using System;
 using System.Collections;
 
 public class Shooting : MonoBehaviour {
 
+	public enum Weapons { gun, hardGun, rocket, secondRocket }
+	
+	public Weapons weaponSelect;
 	[Tooltip("false - only first bsp")]
 	public bool secondBsp;
 	public Transform bulletSpawnPoint;
 	public Transform bulletSpawnPointTwo;
 	public Transform bullet;
 	public float shootInterval;
+
+	public GunSetting gun;
 
 	private string thisName;
 	private float shootinterTimer = 0f;
@@ -32,7 +38,7 @@ public class Shooting : MonoBehaviour {
 			if(Input.GetKey(KeyCode.Space))
 				{
 				// --- 2 BSP REALISATION ---
-				if(secondBsp)
+				if(gun.twoBsp)
 					{
 					if(bsp == bulletSpawnPointTwo)
 						{
@@ -44,6 +50,7 @@ public class Shooting : MonoBehaviour {
 				else 
 					{ bsp = bulletSpawnPoint; }
 		       // ---  END 2 BSP R-N  ---
+
 				Shoot(bullet, bsp);
 				shootinterTimer = 0f;
 
@@ -80,3 +87,13 @@ public class Shooting : MonoBehaviour {
 		bul.name = thisName; 
 		}
 }
+
+[Serializable]
+public class GunSetting
+	{
+	public Transform shell;
+	public float interval;
+	public Transform firstBsp;
+	public Transform secondBsp;
+	public bool twoBsp;
+	}

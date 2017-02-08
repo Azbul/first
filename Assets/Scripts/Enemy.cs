@@ -15,7 +15,8 @@ using System.Collections;
 
 	void Update () {
 		thisTr.Translate(Vector3.forward*speed*Time.deltaTime);
-	}
+		thisTr.Rotate(0, 0.2f, 0);
+		}
 	public override void SetDamage(float damage, string name)
 		{
 		hp -= damage;
