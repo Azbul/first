@@ -34,9 +34,9 @@ public class Shooting : MonoBehaviour {
 				{
 				switch (weaponSelect)
 					{
-					case Weapons.gun : ShootRealisation(gun.shell, gun.firstBsp, gun.secondBsp, gun.twoBsp,  gun.interval); 
+					case Weapons.gun : ShootRealisation(gun); 
 						break;
-					case Weapons.hardGun : ShootRealisation(hardGun.shell, hardGun.firstBsp, hardGun.secondBsp, hardGun.twoBsp,  hardGun.interval); 
+					case Weapons.hardGun : ShootRealisation(hardGun); 
 						break;
 					}
 				
@@ -45,23 +45,24 @@ public class Shooting : MonoBehaviour {
 		}
 
 
-	void ShootRealisation(Transform bullet, Transform bspone, Transform bsptwo, bool twobsp, float Interval)
+	void ShootRealisation(GunSetting gs)
 		{
 		// --- 2 BSP REALISATION ---
-		if(twobsp)
+		if(gs.twoBsp)
 			{
-			if(bsp == bsptwo)
+			if(bsp == gs.secondBsp)
 				{
 				bsp = null;
 				}
-			if(bsp == null) bsp = bspone;
-			else bsp = bsptwo;
+			if(bsp == null) bsp = gs.firstBsp;
+			else bsp = gs.secondBsp;
 			}
 		else 
-			{ bsp = bspone; }
+			{ bsp = gs.firstBsp; }
 		// ---  END 2 BSP R-N  ---
-		shootInterval = Interval;
-		Shoot(bullet, bsp);
+
+		shootInterval = gs.interval;
+		Shoot(gs.shell, bsp);
 		shootinterTimer = 0f;
 
 		//        ---   THIS IS SECOND REALISATION OF SHOOTING   ---
@@ -103,4 +104,5 @@ public class GunSetting
 	public Transform secondBsp;
 	[Tooltip("false - only first bsp")]
 	public bool twoBsp;
+	public AudioClip shotSound;
 	}

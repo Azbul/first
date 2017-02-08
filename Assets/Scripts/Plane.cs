@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System;
 using System.Collections;
 
 public class Plane: MonoBehaviour {
@@ -7,8 +8,8 @@ public class Plane: MonoBehaviour {
 	public float speed;
 	public float rotSpeed;
 	//public Animation planeAnim;
-	//[SerializeField]
-	public float camfollowSmooth = 5f;
+	[SerializeField]
+	private float camfollowSmooth = 5f;
 	[Range(0.1f, 1f)]
 	public float camrotSmooth;
 	public float camHeight;

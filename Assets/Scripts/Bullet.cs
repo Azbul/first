@@ -4,6 +4,8 @@ using System.Collections;
 public class Bullet : MonoBehaviour {
 
 	public float speed;
+	public float damage;
+
 	private Transform tr;
 
 	void Start () {
@@ -22,7 +24,7 @@ public class Bullet : MonoBehaviour {
 		if(planeScript)
 			{
 			string name = tr.name;
-			planeScript.SetDamage(10, name);
+			planeScript.SetDamage(damage, name);
 			}
 		Destroy(gameObject);
 
