@@ -45,7 +45,6 @@ public class MainBehaviour : MonoBehaviour {
 						case 1 :
 						case 2 :
 							players[i] = (GameObject)Instantiate(playerPlanes[0]); break; 
-
 						case 3 : 
 						case 4 :
 						case 5 :
@@ -109,11 +108,11 @@ public class MainBehaviour : MonoBehaviour {
 		{
 		for(int i = 0; i < players.Length; i++)
 			{
-			if(players[i] != null)
-				{
-				if(players[i].name == name)
-					{
-					scores[i]++;
+			if(players[i] != null)          //может не засчитать из-за того, что выстрелит и взорвется, потом снаряд заминусует кого- то.
+				{                           //Возможное решение: сделаем отдельный массив с именами игроков, 
+				if(players[i].name == name) //и здесь вместо players[i].name вставляем i тое имя элемента (скорее всего нужно будет реализовать 
+					{                       //появление самол-а с опред именем в строгом ячейке players. Возм. реш.: после инст-ии вызываем метод 
+					scores[i]++;            //назначение опред имени орпед-ой ячейке.
 					}
 				}
 			}

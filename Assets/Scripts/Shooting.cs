@@ -7,8 +7,12 @@ public class Shooting : MonoBehaviour {
 	public enum Weapons { gun, hardGun, rocket, secondRocket }
 	
 	public Weapons weaponSelect;
+
 	public GunSetting gun;
 	public GunSetting hardGun;
+	public GunSetting rocket;
+	public GunSetting secondRocket;
+
 
 	private float shootInterval = 0.1f;
 	private string thisName;
@@ -38,7 +42,11 @@ public class Shooting : MonoBehaviour {
 						break;
 					case Weapons.hardGun : ShootRealisation(hardGun); 
 						break;
-					}
+					case Weapons.rocket : ShootRealisation(rocket); 
+						break;
+					case Weapons.secondRocket : ShootRealisation(secondRocket); // нужно реализовать if target != 0, то стреляем,
+						break;                                                  // т.е. только тогда, когда есть цель. Поведение aim
+					}                                                           // ракеты после исчезновения цели делать в Rocket.cs.
 				
 				}
 			}
