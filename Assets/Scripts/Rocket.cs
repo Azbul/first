@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Rocket : MonoBehaviour {
+public class Rocket : MonoBehaviour 
+	{
 
 	[Header("Aim Rocket")]
 	public bool aiming;
@@ -55,8 +56,10 @@ public class Rocket : MonoBehaviour {
 		Destroy(gameObject);
 
 		}
-	void FixedUpdate () {
+	void FixedUpdate () 
+		{
 
+		rb.AddForce(tr.right*ballistic, ForceMode.Impulse);
 		if(aiming)	
 			{
 		Vector3 point2Target = tr.position - target.transform.position;
@@ -82,4 +85,4 @@ public class Rocket : MonoBehaviour {
 			}
 
 		}
-}
+	}
