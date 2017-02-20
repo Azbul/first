@@ -10,7 +10,7 @@ public class Plane: MonoBehaviour {
 	//public Animation planeAnim;
 	[SerializeField]
 	private float camfollowSmooth = 5f;
-	[Range(0.1f, 1f)]
+	[Range(0.1f, 2f)]
 	public float camrotSmooth;
 	public float camHeight;
 

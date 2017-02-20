@@ -22,7 +22,7 @@ using System.Collections;
 		hp -= damage;
 		if(hp > 0) 
 			{
-			Debug.Log("11");
+
 			}
 		else
 			{
