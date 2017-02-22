@@ -1,13 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class HomingRocket : MonoBehaviour
+public class HomingRocket : BulletsParent
 	{
 
 	public float damage;
 	public Transform target;
 	public float rocketTurnSpeed = 90.0f;
-	public float rocketSpeed = 10.0f;
+	public float speed = 10.0f;
 	public float turbulence = 10.0f;
 	public float push;
 
@@ -28,6 +28,12 @@ public class HomingRocket : MonoBehaviour
 		postEnd = false;
 		rb.AddForce(tr.forward*push, ForceMode.Impulse);
 		}
+
+	public override void Shellsetting(float sp, float dm)
+	{
+		damage = dm;
+		speed = sp;
+	}
 
 	void OnCollisionEnter(Collision col)
 		{
@@ -59,7 +65,7 @@ public class HomingRocket : MonoBehaviour
 			Vector3 direction = Distance( ) + Wiggle( );
 			direction.Normalize( );
 			tr.rotation = Quaternion.RotateTowards( tr.rotation, Quaternion.LookRotation( direction ), rocketTurnSpeed * Time.deltaTime );
-			tr.Translate( Vector3.forward * rocketSpeed * Time.deltaTime );
+			tr.Translate( Vector3.forward * speed * Time.deltaTime );
 			}
 		}
 	private Vector3 Distance ( )

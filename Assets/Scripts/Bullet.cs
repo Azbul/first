@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Bullet : MonoBehaviour {
+public class Bullet : BulletsParent {
 
 	public float speed;
 	public float damage;
@@ -11,7 +11,12 @@ public class Bullet : MonoBehaviour {
 	void Start () {
 		tr = transform;
 	}
-	
+
+	public override void Shellsetting(float sp, float dm)
+		{
+		damage = dm;
+		speed = sp;
+		}
 
 	void Update () {
 		tr.Translate(Vector3.forward*speed*Time.deltaTime);

@@ -37,7 +37,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44711834, g: 0.49739373, b: 0.57615477, a: 1}
+  m_IndirectSpecularColor: {r: 0.4469998, g: 0.4972734, b: 0.57602847, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -161,7 +161,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4000010528814952, guid: 3bc318f13d088a545847a903de12da21, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 3.131
+      value: 3.87
       objectReference: {fileID: 0}
     - target: {fileID: 4000010528814952, guid: 3bc318f13d088a545847a903de12da21, type: 2}
       propertyPath: m_LocalPosition.x
@@ -177,7 +177,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4000011952850640, guid: 3bc318f13d088a545847a903de12da21, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 3.131
+      value: 3.87
       objectReference: {fileID: 0}
     - target: {fileID: 114000011008597244, guid: 3bc318f13d088a545847a903de12da21,
         type: 2}
@@ -239,6 +239,26 @@ Prefab:
       value: 
       objectReference: {fileID: 4000012708702672, guid: 7911614d585d96e44b9094b5f93d3710,
         type: 2}
+    - target: {fileID: 114000011008597244, guid: 3bc318f13d088a545847a903de12da21,
+        type: 2}
+      propertyPath: gun.shellSpeed
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000011008597244, guid: 3bc318f13d088a545847a903de12da21,
+        type: 2}
+      propertyPath: gun.shellDamage
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000011008597244, guid: 3bc318f13d088a545847a903de12da21,
+        type: 2}
+      propertyPath: rocket.shellSpeed
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000011008597244, guid: 3bc318f13d088a545847a903de12da21,
+        type: 2}
+      propertyPath: rocket.shellDamage
+      value: 20
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3bc318f13d088a545847a903de12da21, type: 2}
   m_IsPrefabParent: 0
@@ -747,6 +767,11 @@ Prefab:
         type: 2}
       propertyPath: rocketSpeed
       value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000013209882722, guid: a6ec1cbf74befd94a9cbd54e465701ad,
+        type: 2}
+      propertyPath: speed
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a6ec1cbf74befd94a9cbd54e465701ad, type: 2}

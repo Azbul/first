@@ -70,7 +70,11 @@ public class Shooting : MonoBehaviour {
 		// ---  END 2 BSP R-N  ---
 
 		shootInterval = gs.interval;
-		Shoot(gs.shell, bsp);
+		//Shoot(gs.shell, bsp);
+		Transform bul = (Transform)Instantiate(gs.shell, bsp.position, bsp.rotation);
+		bul.name = thisName; 
+		BulletsParent bp = bul.gameObject.GetComponent<BulletsParent>();
+		bp.Shellsetting(gs.shellSpeed, gs.shellDamage);
 		shootinterTimer = 0f;
 
 		//        ---   THIS IS SECOND REALISATION OF SHOOTING   ---
@@ -95,15 +99,11 @@ public class Shooting : MonoBehaviour {
 		}
 
 
-	void Shoot(Transform bullet, Transform bulletSpawnPoint)
+	/*void Shoot(Transform bullet, Transform bulletSpawnPoint)
 		{
 		Transform bul = (Transform)Instantiate(bullet, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
 		bul.name = thisName; 
-//		if(setHp) 
-//			{
-//
-//			}
-		}
+		}*/
 }
 
 
@@ -111,6 +111,8 @@ public class Shooting : MonoBehaviour {
 public class GunSetting
 	{
 	public Transform shell;
+	public float shellDamage;
+	public float shellSpeed;
 	public float interval;
 	public Transform firstBsp;
 	public Transform secondBsp;

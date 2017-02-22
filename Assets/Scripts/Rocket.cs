@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Rocket : MonoBehaviour 
+public class Rocket : BulletsParent 
 	{
 
 	[Header("Aim Rocket")]
@@ -41,6 +41,12 @@ public class Rocket : MonoBehaviour
 		rb.AddForce(tr.right*ballistic, ForceMode.Impulse);
 		//transform.RotateAround(tr.position, tr.TransformDirection(Vector3.up), Scatter*Time.deltaTime);
 		}
+
+	public override void Shellsetting(float sp, float dm)
+	{
+		damage = dm;
+		speed = sp;
+	}
 
 	void OnCollisionEnter(Collision col)
 		{
