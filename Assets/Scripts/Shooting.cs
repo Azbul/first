@@ -99,6 +99,10 @@ public class Shooting : MonoBehaviour {
 		{
 		Transform bul = (Transform)Instantiate(bullet, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
 		bul.name = thisName; 
+//		if(setHp) 
+//			{
+//
+//			}
 		}
 }
 

@@ -172,6 +172,6 @@ MonoBehaviour:
   aiming: 0
   target: {fileID: 0}
   rotatingSpeed: 2
-  speed: 40
+  speed: 50
   damage: 20
-  Ballistic: 0.4
+  Ballistic: 0.5

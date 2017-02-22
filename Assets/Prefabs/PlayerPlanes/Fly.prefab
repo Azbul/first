@@ -101,7 +101,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000011542798114}
   m_LocalRotation: {x: -0, y: 0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.5, y: 0, z: 1.4}
+  m_LocalPosition: {x: 0.8, y: 0, z: 2.07}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -114,7 +114,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000011770538640}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.5, y: 0, z: 1.4}
+  m_LocalPosition: {x: -0.8, y: 0, z: 2.07}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -299,10 +299,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8434058b44d34bd449d4829cc65f23d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponSelect: 1
+  weaponSelect: 0
   gun:
     shell: {fileID: 4000010732676768, guid: 63185e00ca227cd4fa0696abd5f5b8d6, type: 2}
-    interval: 0.15
+    interval: 0.05
     firstBsp: {fileID: 4000010414297156}
     secondBsp: {fileID: 4000010930251136}
     twoBsp: 1
@@ -342,6 +342,7 @@ MonoBehaviour:
   hp: 100
   speed: 15
   rotSpeed: 90
+  tilt: 2
   camfollowSmooth: 500
   camrotSmooth: 0.8
-  camHeight: 50
+  camHeight: 80

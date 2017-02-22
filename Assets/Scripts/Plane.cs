@@ -7,10 +7,11 @@ public class Plane: MonoBehaviour {
 	public float hp = 100f;
 	public float speed;
 	public float rotSpeed;
+	public float tilt;
 	//public Animation planeAnim;
 	[SerializeField]
 	private float camfollowSmooth = 5f;
-	[Range(0.1f, 2f)]
+	[Range(0.0f, 2.0f)]
 	public float camrotSmooth;
 	public float camHeight;
 
@@ -43,7 +44,7 @@ public class Plane: MonoBehaviour {
 			thisTr.Rotate(Vector3.up, rotSpeed*Time.deltaTime);
 			if (planeTrans.rotation.eulerAngles.z < 30 || planeTrans.rotation.eulerAngles.z > 327) 
 				{
-				planeTrans.Rotate(0, 0, 1);
+				planeTrans.Rotate(0, 0, tilt);
 				}
 			}
 
@@ -53,7 +54,7 @@ public class Plane: MonoBehaviour {
 			thisTr.Rotate(Vector3.up, -rotSpeed*Time.deltaTime);
 			if (planeTrans.rotation.eulerAngles.z > 330 || planeTrans.rotation.eulerAngles.z < 33) 
 				{
-				planeTrans.Rotate(0, 0, -1);
+				planeTrans.Rotate(0, 0, -tilt);
 				}
 			}	
 
@@ -66,7 +67,7 @@ public class Plane: MonoBehaviour {
 			{
 			if(planeTrans.localRotation !=  Quaternion.Euler(0, 180, 0))
 				{
-				planeTrans.localRotation = Quaternion.Lerp(planeTrans.localRotation, Quaternion.Euler(0, 180, 0), 3f*Time.deltaTime);
+				planeTrans.localRotation = Quaternion.Lerp(planeTrans.localRotation, Quaternion.Euler(0, 180, 0), tilt*2f*Time.deltaTime);
 				}
 			}
 		}

@@ -20,7 +20,7 @@ public class HomingRocket : MonoBehaviour
 
 	void Start()
 		{
-		target = GameObject.Find("Fly").transform;
+		target = GameObject.FindGameObjectWithTag("Player").transform;
 		trr = GetComponent<TrailRenderer>();
 		trr.enabled = false;
 		rb = GetComponent<Rigidbody>();
@@ -68,7 +68,7 @@ public class HomingRocket : MonoBehaviour
 		}
 	private Vector3 Wiggle ( )
 		{
-		return Random.insideUnitSphere * turbulence;
+		return new Vector3(Random.Range(-1.0f, 2.0f), 0, Random.Range(-1.0f, 2.0f)) * turbulence;
 		}
 
 	}
