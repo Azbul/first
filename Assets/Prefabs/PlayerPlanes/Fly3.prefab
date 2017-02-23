@@ -302,6 +302,8 @@ MonoBehaviour:
   weaponSelect: 1
   gun:
     shell: {fileID: 4000010732676768, guid: 63185e00ca227cd4fa0696abd5f5b8d6, type: 2}
+    shellDamage: 0
+    shellSpeed: 0
     interval: 0.15
     firstBsp: {fileID: 4000010119240114}
     secondBsp: {fileID: 4000010666700964}
@@ -309,6 +311,8 @@ MonoBehaviour:
     shotSound: {fileID: 0}
   hardGun:
     shell: {fileID: 0}
+    shellDamage: 0
+    shellSpeed: 0
     interval: 1
     firstBsp: {fileID: 0}
     secondBsp: {fileID: 0}
@@ -316,6 +320,8 @@ MonoBehaviour:
     shotSound: {fileID: 0}
   rocket:
     shell: {fileID: 0}
+    shellDamage: 0
+    shellSpeed: 0
     interval: 1
     firstBsp: {fileID: 0}
     secondBsp: {fileID: 0}
@@ -323,6 +329,8 @@ MonoBehaviour:
     shotSound: {fileID: 0}
   secondRocket:
     shell: {fileID: 0}
+    shellDamage: 0
+    shellSpeed: 0
     interval: 1
     firstBsp: {fileID: 0}
     secondBsp: {fileID: 0}
@@ -342,6 +350,7 @@ MonoBehaviour:
   hp: 100
   speed: 15
   rotSpeed: 90
+  tilt: 0
   camfollowSmooth: 500
   camrotSmooth: 0.8
   camHeight: 50

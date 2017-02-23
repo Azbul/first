@@ -11,6 +11,21 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 1000011460482492}
   m_IsPrefabParent: 1
+--- !u!1 &1000011005077472
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 4000011803679094}
+  m_Layer: 0
+  m_Name: bspNARR
+  m_TagString: Untagged
+  m_Icon: {fileID: -4738709637730668739, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1000011017151662
 GameObject:
   m_ObjectHideFlags: 0
@@ -41,8 +56,23 @@ GameObject:
   - 114: {fileID: 114000011008597244}
   m_Layer: 0
   m_Name: Fly2
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1000012604472456
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 4000010891132990}
+  m_Layer: 0
+  m_Name: bspNARL
+  m_TagString: Untagged
+  m_Icon: {fileID: -4738709637730668739, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -114,7 +144,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000011017151662}
   m_LocalRotation: {x: -0, y: 0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.5, y: 0, z: 1.4}
+  m_LocalPosition: {x: 0.89, y: 0, z: 3.87}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -133,14 +163,40 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4000013481563630}
   m_RootOrder: 1
+--- !u!4 &4000010891132990
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012604472456}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.85, y: 0, z: 2.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 4000013481563630}
+  m_RootOrder: 4
+--- !u!4 &4000011803679094
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011005077472}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.85, y: 0, z: 2.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 4000013481563630}
+  m_RootOrder: 5
 --- !u!4 &4000011952850640
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012651943758}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.5, y: 0, z: 1.4}
+  m_LocalRotation: {x: -0, y: 0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.89, y: 0, z: 3.87}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -161,6 +217,8 @@ Transform:
   - {fileID: 4000010853139156}
   - {fileID: 4000010528814952}
   - {fileID: 4000011952850640}
+  - {fileID: 4000010891132990}
+  - {fileID: 4000011803679094}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!23 &23000014102780788
@@ -224,7 +282,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 4.85, y: 0.5, z: 1.26}
+  m_Size: {x: 4.8, y: 0.5, z: 0.87}
   m_Center: {x: 0, y: 0, z: 0.12}
 --- !u!65 &65000012453080312
 BoxCollider:
@@ -236,7 +294,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.87, y: 0.5, z: 4.5}
+  m_Size: {x: 0.5, y: 0.5, z: 4.33}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!96 &96000010055264180
 TrailRenderer:
@@ -268,8 +326,8 @@ TrailRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Time: 7
-  m_StartWidth: 0.39
-  m_EndWidth: 0.2
+  m_StartWidth: 0.4
+  m_EndWidth: 0.4
   m_Colors:
     m_Color[0]:
       serializedVersion: 2
@@ -299,30 +357,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8434058b44d34bd449d4829cc65f23d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponSelect: 1
+  weaponSelect: 0
   gun:
     shell: {fileID: 4000010732676768, guid: 63185e00ca227cd4fa0696abd5f5b8d6, type: 2}
-    interval: 0.15
+    shellDamage: 5
+    shellSpeed: 200
+    interval: 0.05
     firstBsp: {fileID: 4000010528814952}
     secondBsp: {fileID: 4000011952850640}
     twoBsp: 1
     shotSound: {fileID: 0}
   hardGun:
     shell: {fileID: 0}
+    shellDamage: 0
+    shellSpeed: 0
     interval: 1
     firstBsp: {fileID: 0}
     secondBsp: {fileID: 0}
     twoBsp: 0
     shotSound: {fileID: 0}
   rocket:
-    shell: {fileID: 0}
-    interval: 1
-    firstBsp: {fileID: 0}
-    secondBsp: {fileID: 0}
-    twoBsp: 0
+    shell: {fileID: 4000012708702672, guid: 7911614d585d96e44b9094b5f93d3710, type: 2}
+    shellDamage: 20
+    shellSpeed: 120
+    interval: 0.5
+    firstBsp: {fileID: 4000011803679094}
+    secondBsp: {fileID: 4000010891132990}
+    twoBsp: 1
     shotSound: {fileID: 0}
   secondRocket:
     shell: {fileID: 0}
+    shellDamage: 0
+    shellSpeed: 0
     interval: 1
     firstBsp: {fileID: 0}
     secondBsp: {fileID: 0}
@@ -340,8 +406,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 100
-  speed: 15
-  rotSpeed: 90
+  speed: 40
+  rotSpeed: 120
+  tilt: 2
   camfollowSmooth: 500
-  camrotSmooth: 0.8
-  camHeight: 50
+  camrotSmooth: 1.5
+  camHeight: 80

@@ -22,8 +22,8 @@ GameObject:
   - 33: {fileID: 33000012297243802}
   - 65: {fileID: 65000013742087120}
   - 23: {fileID: 23000013624939746}
-  - 96: {fileID: 96000010205955032}
   - 114: {fileID: 114000013209882722}
+  - 96: {fileID: 96000010205955032}
   - 54: {fileID: 54000013600433096}
   m_Layer: 0
   m_Name: PostAimRocket
@@ -172,6 +172,6 @@ MonoBehaviour:
   damage: 5
   target: {fileID: 0}
   rocketTurnSpeed: 200
-  rocketSpeed: 30
+  speed: 20
   turbulence: 10
   push: 50
