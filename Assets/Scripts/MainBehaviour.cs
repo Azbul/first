@@ -14,6 +14,8 @@ public class MainBehaviour : MonoBehaviour {
 			{
 			//players[i] = enemyPlanes[0];
 			}
+		players[0] = GameObject.FindGameObjectWithTag("Player");
+
 	}
 	
 

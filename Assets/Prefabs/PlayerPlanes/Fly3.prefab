@@ -87,9 +87,10 @@ GameObject:
   - 65: {fileID: 65000013436479414}
   - 114: {fileID: 114000012825674170}
   - 114: {fileID: 114000010504423918}
+  - 114: {fileID: 114000012057149626}
   m_Layer: 0
   m_Name: Fly3
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -101,7 +102,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012010416090}
   m_LocalRotation: {x: -0, y: 0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.5, y: 0, z: 1.4}
+  m_LocalPosition: {x: 0.72, y: 0, z: 2.55}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -144,7 +145,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000011251982478}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.5, y: 0, z: 1.4}
+  m_LocalPosition: {x: -0.72, y: 0, z: 2.55}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -224,7 +225,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.45, y: 0.5, z: 4}
+  m_Size: {x: 0.39, y: 0.5, z: 3.76}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!65 &65000014191429068
 BoxCollider:
@@ -299,12 +300,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8434058b44d34bd449d4829cc65f23d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponSelect: 1
+  weaponSelect: 0
   gun:
     shell: {fileID: 4000010732676768, guid: 63185e00ca227cd4fa0696abd5f5b8d6, type: 2}
-    shellDamage: 0
-    shellSpeed: 0
-    interval: 0.15
+    shellDamage: 30
+    shellSpeed: 200
+    interval: 0.2
     firstBsp: {fileID: 4000010119240114}
     secondBsp: {fileID: 4000010666700964}
     twoBsp: 1
@@ -336,7 +337,7 @@ MonoBehaviour:
     secondBsp: {fileID: 0}
     twoBsp: 0
     shotSound: {fileID: 0}
---- !u!114 &114000012825674170
+--- !u!114 &114000012057149626
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -350,7 +351,25 @@ MonoBehaviour:
   hp: 100
   speed: 15
   rotSpeed: 90
-  tilt: 0
+  tilt: 2
   camfollowSmooth: 500
   camrotSmooth: 0.8
-  camHeight: 50
+  camHeight: 80
+--- !u!114 &114000012825674170
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013527828688}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96c069d63ab786744bbf80ccd19df524, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hp: 100
+  speed: 20
+  rotSpeed: 90
+  tilt: 2
+  camfollowSmooth: 500
+  camrotSmooth: 0.8
+  camHeight: 80

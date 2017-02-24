@@ -26,7 +26,7 @@ public class HomingRocket : BulletsParent
 		rb = GetComponent<Rigidbody>();
 		tr = transform;
 		postEnd = false;
-		rb.AddForce(tr.forward*push, ForceMode.Impulse);
+		rb.AddForce(tr.forward*speed, ForceMode.Impulse);
 		}
 
 	public override void Shellsetting(float sp, float dm)

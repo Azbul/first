@@ -28,6 +28,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1000010753170060
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 4000012328412744}
+  m_Layer: 0
+  m_Name: bspPAR
+  m_TagString: Untagged
+  m_Icon: {fileID: -4738709637730668739, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1000011240864288
 GameObject:
   m_ObjectHideFlags: 0
@@ -38,6 +53,21 @@ GameObject:
   - 4: {fileID: 4000011780391708}
   m_Layer: 0
   m_Name: bspL
+  m_TagString: Untagged
+  m_Icon: {fileID: -4738709637730668739, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1000011949955658
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 4000011843668336}
+  m_Layer: 0
+  m_Name: bspAL
   m_TagString: Untagged
   m_Icon: {fileID: -4738709637730668739, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -58,8 +88,23 @@ GameObject:
   - 114: {fileID: 114000014139625456}
   m_Layer: 0
   m_Name: Fly7
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1000013194405084
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 4000010734861160}
+  m_Layer: 0
+  m_Name: bspR
+  m_TagString: Untagged
+  m_Icon: {fileID: -4738709637730668739, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -72,7 +117,22 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000010145932778}
   m_Layer: 0
-  m_Name: bspR
+  m_Name: bspAR
+  m_TagString: Untagged
+  m_Icon: {fileID: -4738709637730668739, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1000014117327036
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 4000011497217078}
+  m_Layer: 0
+  m_Name: bspPAL
   m_TagString: Untagged
   m_Icon: {fileID: -4738709637730668739, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -100,6 +160,19 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000013728206794}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 2.77, y: 0, z: 1.35}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 4000012090114416}
+  m_RootOrder: 7
+--- !u!4 &4000010734861160
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013194405084}
   m_LocalRotation: {x: -0, y: 0, z: -0, w: 1}
   m_LocalPosition: {x: 0.5, y: 0, z: 1.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -107,6 +180,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4000012090114416}
   m_RootOrder: 2
+--- !u!4 &4000011497217078
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000014117327036}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.77, y: 0, z: 1.38}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 4000012090114416}
+  m_RootOrder: 5
 --- !u!4 &4000011780391708
 Transform:
   m_ObjectHideFlags: 1
@@ -120,6 +206,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4000012090114416}
   m_RootOrder: 3
+--- !u!4 &4000011843668336
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011949955658}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -2.77, y: 0, z: 1.35}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 4000012090114416}
+  m_RootOrder: 6
 --- !u!4 &4000011870834518
 Transform:
   m_ObjectHideFlags: 1
@@ -140,16 +239,33 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012557652276}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 23.15, y: 20, z: 176.24}
+  m_LocalPosition: {x: 12.226003, y: 20, z: 168.291}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 4000012699586660}
   - {fileID: 4000011870834518}
-  - {fileID: 4000010145932778}
+  - {fileID: 4000010734861160}
   - {fileID: 4000011780391708}
+  - {fileID: 4000012328412744}
+  - {fileID: 4000011497217078}
+  - {fileID: 4000011843668336}
+  - {fileID: 4000010145932778}
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!4 &4000012328412744
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010753170060}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.77, y: 0, z: 1.38}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 4000012090114416}
+  m_RootOrder: 4
 --- !u!4 &4000012699586660
 Transform:
   m_ObjectHideFlags: 1
@@ -221,10 +337,10 @@ BoxCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012557652276}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.12, y: 0.5, z: 6.16}
+  m_Size: {x: 0.74, y: 0.5, z: 5.82}
   m_Center: {x: 0, y: 0, z: -0.14}
 --- !u!65 &65000013295038408
 BoxCollider:
@@ -233,11 +349,11 @@ BoxCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012557652276}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 5.99, y: 0.5, z: 2.23}
-  m_Center: {x: 0, y: 0, z: -0.86}
+  m_Size: {x: 5.5, y: 0.5, z: 1.8}
+  m_Center: {x: 0, y: 0, z: -0.98}
 --- !u!96 &96000011319981074
 TrailRenderer:
   m_ObjectHideFlags: 1
@@ -299,12 +415,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96c069d63ab786744bbf80ccd19df524, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 100
-  speed: 15
-  rotSpeed: 90
+  hp: 1000
+  speed: 60
+  rotSpeed: 110
+  tilt: 1.5
   camfollowSmooth: 500
-  camrotSmooth: 0.8
-  camHeight: 50
+  camrotSmooth: 3.06
+  camHeight: 80
 --- !u!114 &114000014139625456
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -316,32 +433,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8434058b44d34bd449d4829cc65f23d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponSelect: 1
+  weaponSelect: 0
   gun:
     shell: {fileID: 4000010732676768, guid: 63185e00ca227cd4fa0696abd5f5b8d6, type: 2}
+    shellDamage: 5
+    shellSpeed: 200
     interval: 0.15
-    firstBsp: {fileID: 4000010145932778}
+    firstBsp: {fileID: 4000010734861160}
     secondBsp: {fileID: 4000011780391708}
     twoBsp: 1
     shotSound: {fileID: 0}
   hardGun:
     shell: {fileID: 0}
+    shellDamage: 0
+    shellSpeed: 0
     interval: 1
     firstBsp: {fileID: 0}
     secondBsp: {fileID: 0}
     twoBsp: 0
     shotSound: {fileID: 0}
   rocket:
-    shell: {fileID: 0}
-    interval: 1
-    firstBsp: {fileID: 0}
-    secondBsp: {fileID: 0}
-    twoBsp: 0
+    shell: {fileID: 4000011364206140, guid: 993957a055e6bc946b47df74aa6f1aa5, type: 2}
+    shellDamage: 20
+    shellSpeed: 120
+    interval: 0.5
+    firstBsp: {fileID: 4000010145932778}
+    secondBsp: {fileID: 4000011843668336}
+    twoBsp: 1
     shotSound: {fileID: 0}
   secondRocket:
-    shell: {fileID: 0}
-    interval: 1
-    firstBsp: {fileID: 0}
-    secondBsp: {fileID: 0}
-    twoBsp: 0
+    shell: {fileID: 4000012577892070, guid: a6ec1cbf74befd94a9cbd54e465701ad, type: 2}
+    shellDamage: 50
+    shellSpeed: 120
+    interval: 0.5
+    firstBsp: {fileID: 4000012328412744}
+    secondBsp: {fileID: 4000011497217078}
+    twoBsp: 1
     shotSound: {fileID: 0}
