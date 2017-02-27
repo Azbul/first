@@ -35,17 +35,18 @@ public class HomingRocket : BulletsParent
 		speed = sp;
 	}
 
-	void OnCollisionEnter(Collision col)
+	void OnTriggerEnter(Collider col)
 		{
-
-		Plane planeScript = col.gameObject.GetComponent<Plane>();
-
-		if(planeScript)
+		if (col.gameObject.name != tr.name)
 			{
-			string name = tr.name;
-			planeScript.SetDamage(damage, name);
+			Plane planeScript = col.gameObject.GetComponent<Plane>();
+			if(planeScript)
+				{
+				string name = tr.name;
+				planeScript.SetDamage(damage, name);
+				}
+			Destroy(gameObject);
 			}
-		Destroy(gameObject);
 		}
 
 	void Update ( )
@@ -53,7 +54,7 @@ public class HomingRocket : BulletsParent
 		if(!postEnd)
 			{
 			pushtime += Time.deltaTime;
-			if(pushtime>0.7f)
+			if(pushtime>0.3f)
 				{
 				trr.enabled = true;
 				postEnd = true;

@@ -48,20 +48,20 @@ public class Rocket : BulletsParent
 		speed = sp;
 	}
 
-	void OnCollisionEnter(Collision col)
+	void OnTriggerEnter(Collider col)
 		{
-
-		Plane planeScript = col.gameObject.GetComponent<Plane>();
-
-		if(planeScript)
+		if (col.gameObject.name != tr.name)
 			{
-			string name = tr.name;
-			planeScript.SetDamage(damage, name);
+			Plane planeScript = col.gameObject.GetComponent<Plane>();
+			if(planeScript)
+				{
+				string name = tr.name;
+				planeScript.SetDamage(damage, name);
+				}
+				Destroy(gameObject);
 			}
-
-		Destroy(gameObject);
-
 		}
+
 	void FixedUpdate () 
 		{
 

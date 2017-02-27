@@ -22,16 +22,17 @@ public class Bullet : BulletsParent {
 		tr.Translate(Vector3.forward*speed*Time.deltaTime);
 	}
 
-	void OnCollisionEnter(Collision col)
-		{
-		
-		Plane planeScript = col.gameObject.GetComponent<Plane>();
-		if(planeScript)
+	void OnTriggerEnter(Collider col)
+		{ 
+		if (col.gameObject.name != tr.name)
 			{
-			string name = tr.name;
-			planeScript.SetDamage(damage, name);
+			Plane planeScript = col.gameObject.GetComponent<Plane>();
+			if(planeScript)
+				{
+				string name = tr.name;
+				planeScript.SetDamage(damage, name);
+				}
+			Destroy(gameObject);
 			}
-		Destroy(gameObject);
-
 		}
 }

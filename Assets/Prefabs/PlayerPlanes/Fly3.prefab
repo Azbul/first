@@ -369,7 +369,7 @@ MonoBehaviour:
   hp: 100
   speed: 20
   rotSpeed: 90
-  tilt: 2
+  tilt: 100
   camfollowSmooth: 500
-  camrotSmooth: 0.8
+  camrotSmooth: 1.55
   camHeight: 80

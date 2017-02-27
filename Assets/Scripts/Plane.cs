@@ -44,7 +44,7 @@ public class Plane: MonoBehaviour {
 			thisTr.Rotate(Vector3.up, rotSpeed*Time.deltaTime);
 			if (planeTrans.rotation.eulerAngles.z < 30 || planeTrans.rotation.eulerAngles.z > 327) 
 				{
-				planeTrans.Rotate(0, 0, tilt);
+				planeTrans.Rotate(0, 0, tilt*Time.deltaTime);
 				}
 			}
 
@@ -54,7 +54,7 @@ public class Plane: MonoBehaviour {
 			thisTr.Rotate(Vector3.up, -rotSpeed*Time.deltaTime);
 			if (planeTrans.rotation.eulerAngles.z > 330 || planeTrans.rotation.eulerAngles.z < 33) 
 				{
-				planeTrans.Rotate(0, 0, -tilt);
+				planeTrans.Rotate(0, 0, -tilt*Time.deltaTime);
 				}
 			}	
 
@@ -67,7 +67,7 @@ public class Plane: MonoBehaviour {
 			{
 			if(planeTrans.localRotation !=  Quaternion.Euler(0, 180, 0))
 				{
-				planeTrans.localRotation = Quaternion.Lerp(planeTrans.localRotation, Quaternion.Euler(0, 180, 0), tilt*2f*Time.deltaTime);
+				planeTrans.localRotation = Quaternion.Lerp(planeTrans.localRotation, Quaternion.Euler(0, 180, 0), tilt/20*Time.deltaTime);
 				}
 			}
 		}
