@@ -501,7 +501,7 @@ MonoBehaviour:
   tilt: 200
   camfollowSmooth: 500
   camrotSmooth: 2
-  camHeight: 80
+  camHeight: 150
 --- !u!114 &114000014284554710
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -513,40 +513,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8434058b44d34bd449d4829cc65f23d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponSelect: 0
+  weaponSelect: 2
   gun:
     shell: {fileID: 4000010732676768, guid: 63185e00ca227cd4fa0696abd5f5b8d6, type: 2}
     shellDamage: 5
     shellSpeed: 300
     interval: 0.1
+    canReload: 0
+    clip: 1000
     firstBsp: {fileID: 4000010116648430}
     secondBsp: {fileID: 4000010595597614}
     twoBsp: 1
     shotSound: {fileID: 0}
-  hardGun:
-    shell: {fileID: 0}
-    shellDamage: 0
-    shellSpeed: 0
-    interval: 1
-    firstBsp: {fileID: 0}
-    secondBsp: {fileID: 0}
-    twoBsp: 0
-    shotSound: {fileID: 0}
+    clipcounter: 0
+    startReload: 0
   rocket:
     shell: {fileID: 4000012708702672, guid: 7911614d585d96e44b9094b5f93d3710, type: 2}
-    shellDamage: 20
+    shellDamage: 30
     shellSpeed: 120
-    interval: 0.15
+    interval: 0.05
+    canReload: 1
+    clip: 40
     firstBsp: {fileID: 4000013011104904}
     secondBsp: {fileID: 4000011881098114}
     twoBsp: 1
     shotSound: {fileID: 0}
+    clipcounter: 0
+    startReload: 0
   secondRocket:
     shell: {fileID: 4000012577892070, guid: a6ec1cbf74befd94a9cbd54e465701ad, type: 2}
-    shellDamage: 50
+    shellDamage: 90
     shellSpeed: 100
-    interval: 1
+    interval: 0.4
+    canReload: 1
+    clip: 8
     firstBsp: {fileID: 4000011870984744}
     secondBsp: {fileID: 4000013571426064}
     twoBsp: 1
     shotSound: {fileID: 0}
+    clipcounter: 0
+    startReload: 0

@@ -87,7 +87,6 @@ GameObject:
   - 65: {fileID: 65000013436479414}
   - 114: {fileID: 114000012825674170}
   - 114: {fileID: 114000010504423918}
-  - 114: {fileID: 114000012057149626}
   m_Layer: 0
   m_Name: Fly3
   m_TagString: Player
@@ -303,7 +302,7 @@ MonoBehaviour:
   weaponSelect: 0
   gun:
     shell: {fileID: 4000010732676768, guid: 63185e00ca227cd4fa0696abd5f5b8d6, type: 2}
-    shellDamage: 30
+    shellDamage: 20
     shellSpeed: 200
     interval: 0.2
     firstBsp: {fileID: 4000010119240114}
@@ -337,24 +336,6 @@ MonoBehaviour:
     secondBsp: {fileID: 0}
     twoBsp: 0
     shotSound: {fileID: 0}
---- !u!114 &114000012057149626
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000013527828688}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 96c069d63ab786744bbf80ccd19df524, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hp: 100
-  speed: 15
-  rotSpeed: 90
-  tilt: 2
-  camfollowSmooth: 500
-  camrotSmooth: 0.8
-  camHeight: 80
 --- !u!114 &114000012825674170
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -367,9 +348,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 100
-  speed: 20
+  speed: 25
   rotSpeed: 90
   tilt: 100
   camfollowSmooth: 500
-  camrotSmooth: 1.55
+  camrotSmooth: 1.5
   camHeight: 80

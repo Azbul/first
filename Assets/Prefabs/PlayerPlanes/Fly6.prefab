@@ -64,21 +64,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &1000011689001568
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 4000010182592306}
-  m_Layer: 0
-  m_Name: bspPAR
-  m_TagString: Untagged
-  m_Icon: {fileID: -4738709637730668739, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1 &1000012106517506
 GameObject:
   m_ObjectHideFlags: 0
@@ -88,7 +73,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000011284144120}
   m_Layer: 0
-  m_Name: gun
+  m_Name: gunL
   m_TagString: Untagged
   m_Icon: {fileID: -4738709637730668739, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -124,34 +109,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &1000013369165806
+--- !u!1 &1000013686354250
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 4000013868978620}
+  - 4: {fileID: 4000013725965088}
   m_Layer: 0
-  m_Name: bspPAL
+  m_Name: gunR
   m_TagString: Untagged
   m_Icon: {fileID: -4738709637730668739, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4000010182592306
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000011689001568}
-  m_LocalRotation: {x: -0, y: 0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.77, y: 0, z: 1.94}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_Children: []
-  m_Father: {fileID: 4000012969970938}
-  m_RootOrder: 2
 --- !u!4 &4000010208048266
 Transform:
   m_ObjectHideFlags: 1
@@ -164,7 +136,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 4000012969970938}
-  m_RootOrder: 6
+  m_RootOrder: 4
 --- !u!4 &4000011284144120
 Transform:
   m_ObjectHideFlags: 1
@@ -172,12 +144,12 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012106517506}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.02, y: 0, z: 4.07}
+  m_LocalPosition: {x: -1.08, y: 0, z: 2.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 4000012969970938}
-  m_RootOrder: 4
+  m_RootOrder: 5
 --- !u!4 &4000012022205080
 Transform:
   m_ObjectHideFlags: 1
@@ -198,7 +170,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000011389604970}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.909}
+  m_LocalPosition: {x: 0, y: 0, z: -2.67}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -217,26 +189,25 @@ Transform:
   m_Children:
   - {fileID: 4000012022205080}
   - {fileID: 4000012915658152}
-  - {fileID: 4000010182592306}
-  - {fileID: 4000013868978620}
-  - {fileID: 4000011284144120}
+  - {fileID: 4000013725965088}
   - {fileID: 4000013923055266}
   - {fileID: 4000010208048266}
+  - {fileID: 4000011284144120}
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!4 &4000013868978620
+--- !u!4 &4000013725965088
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000013369165806}
+  m_GameObject: {fileID: 1000013686354250}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.77, y: 0, z: 1.94}
+  m_LocalPosition: {x: 1.08, y: 0, z: 2.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 4000012969970938}
-  m_RootOrder: 3
+  m_RootOrder: 2
 --- !u!4 &4000013923055266
 Transform:
   m_ObjectHideFlags: 1
@@ -249,7 +220,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 4000012969970938}
-  m_RootOrder: 5
+  m_RootOrder: 3
 --- !u!23 &23000013098085134
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -386,43 +357,46 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8434058b44d34bd449d4829cc65f23d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponSelect: 3
+  weaponSelect: 0
   gun:
     shell: {fileID: 4000010732676768, guid: 63185e00ca227cd4fa0696abd5f5b8d6, type: 2}
-    shellDamage: 20
-    shellSpeed: 200
-    interval: 0.05
-    firstBsp: {fileID: 4000011284144120}
-    secondBsp: {fileID: 0}
-    twoBsp: 0
+    shellDamage: 5
+    shellSpeed: 300
+    interval: 0.07
+    canReload: 0
+    clip: 0
+    firstBsp: {fileID: 4000013725965088}
+    secondBsp: {fileID: 4000011284144120}
+    twoBsp: 1
     shotSound: {fileID: 0}
-  hardGun:
-    shell: {fileID: 0}
-    shellDamage: 0
-    shellSpeed: 0
-    interval: 1
-    firstBsp: {fileID: 0}
-    secondBsp: {fileID: 0}
-    twoBsp: 0
-    shotSound: {fileID: 0}
+    clipcounter: 0
+    startReload: 0
   rocket:
     shell: {fileID: 4000011364206140, guid: 993957a055e6bc946b47df74aa6f1aa5, type: 2}
-    shellDamage: 20
+    shellDamage: 70
     shellSpeed: 100
     interval: 0.25
+    canReload: 1
+    clip: 6
     firstBsp: {fileID: 4000010208048266}
     secondBsp: {fileID: 4000013923055266}
     twoBsp: 1
     shotSound: {fileID: 0}
+    clipcounter: 0
+    startReload: 0
   secondRocket:
-    shell: {fileID: 4000012577892070, guid: a6ec1cbf74befd94a9cbd54e465701ad, type: 2}
-    shellDamage: 50
-    shellSpeed: 100
-    interval: 1
-    firstBsp: {fileID: 4000010182592306}
-    secondBsp: {fileID: 4000013868978620}
-    twoBsp: 1
+    shell: {fileID: 0}
+    shellDamage: 0
+    shellSpeed: 0
+    interval: 0
+    canReload: 0
+    clip: 0
+    firstBsp: {fileID: 0}
+    secondBsp: {fileID: 0}
+    twoBsp: 0
     shotSound: {fileID: 0}
+    clipcounter: 0
+    startReload: 0
 --- !u!114 &114000011925367554
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -440,4 +414,4 @@ MonoBehaviour:
   tilt: 100
   camfollowSmooth: 500
   camrotSmooth: 2
-  camHeight: 80
+  camHeight: 100

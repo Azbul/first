@@ -4,57 +4,87 @@ using System.Collections;
 
 public class Shooting : MonoBehaviour {
 
-	public enum Weapons { gun, hardGun, rocket, secondRocket }
+	public enum Weapons { gun, rocket, secondRocket }
 	
 	public Weapons weaponSelect;
 
 	public GunSetting gun;
-	public GunSetting hardGun;
 	public GunSetting rocket;
 	public GunSetting secondRocket;
-
 
 	private float shootInterval = 0.1f;
 	private string thisName;
 	private float shootinterTimer = 0f;
 	private Transform bsp;
 
-		
-		void Start () {
+
+	void Start () 
+		{
 		thisName = gameObject.name;
-	
 		}
 	
-		void Update () {
-	
-		if(shootinterTimer < shootInterval)
+	IEnumerator Reload(GunSetting gs)
+		{
+		yield return new WaitForSeconds(3.0f);
+		gs.clipcounter = 0;
+		gs.startReload = false;
+		Debug.Log("reloaded");
+		}
+
+	void Update () 
+		{
+
+		if(Input.GetKeyDown("up"))
 			{
-			shootinterTimer += Time.deltaTime;
+			shootInterval = 0.1f;
+			weaponSelect = weaponSelect + 1;
+			if((int)weaponSelect > Enum.GetNames(typeof(Weapons)).Length - 1)
+				weaponSelect = 0;
 			}
-		
-		if(shootinterTimer > shootInterval) 
+		if(Input.GetKeyDown("down"))
 			{
-			if(Input.GetKey(KeyCode.Space))
+			shootInterval = 0.1f;
+			weaponSelect = weaponSelect - 1;
+			if((int)weaponSelect < 0)
+				weaponSelect = (Weapons)Enum.GetNames(typeof(Weapons)).Length - 1;
+			}
+
+
+	if(shootinterTimer < shootInterval)
+		{
+		shootinterTimer += Time.deltaTime;
+		}
+	
+	if(shootinterTimer > shootInterval) 
+		{
+		if(Input.GetKey(KeyCode.Space))
+			{
+			switch (weaponSelect)
 				{
-				switch (weaponSelect)
-					{
-					case Weapons.gun : ShootRealisation(gun); 
-						break;
-					case Weapons.hardGun : ShootRealisation(hardGun); 
-						break;
-					case Weapons.rocket : ShootRealisation(rocket); 
-						break;
-					case Weapons.secondRocket : ShootRealisation(secondRocket); // нужно реализовать if target != 0, то стреляем,
-						break;                                                  // т.е. только тогда, когда есть цель. Поведение aim
-					}                                                           // ракеты после исчезновения цели делать в Rocket.cs.
-				
-				}
+				case Weapons.gun : ShootRealisation(gun); 
+					break;
+				case Weapons.rocket : ShootRealisation(rocket); 
+					break;
+				case Weapons.secondRocket : ShootRealisation(secondRocket); // нужно реализовать if target != 0, то стреляем,
+					break;                                                  // т.е. только тогда, когда есть цель. Поведение aim
+				}                                                           // ракеты после исчезновения цели делать в Rocket.cs.
 			}
 		}
+	}
 
 
 	void ShootRealisation(GunSetting gs)
 		{
+		if(gs.clipcounter >= gs.clip && gs.canReload) 
+			{
+			if(!gs.startReload)
+				{
+				StartCoroutine(Reload(gs));
+				gs.startReload = true;	
+				}
+			return;
+			}
+		
 		// --- 2 BSP REALISATION ---
 		if(gs.twoBsp)
 			{
@@ -70,11 +100,15 @@ public class Shooting : MonoBehaviour {
 		// ---  END 2 BSP R-N  ---
 
 		shootInterval = gs.interval;
+
 		//Shoot(gs.shell, bsp);
+
+		/// --- SHOT ---
 		Transform bul = (Transform)Instantiate(gs.shell, bsp.position, bsp.rotation);
 		bul.name = thisName; 
 		BulletsParent bp = bul.gameObject.GetComponent<BulletsParent>();
 		bp.Shellsetting(gs.shellSpeed, gs.shellDamage);
+		gs.clipcounter++;
 		shootinterTimer = 0f;
 
 		//        ---   THIS IS SECOND REALISATION OF SHOOTING   ---
@@ -114,9 +148,15 @@ public class GunSetting
 	public float shellDamage;
 	public float shellSpeed;
 	public float interval;
+	public bool canReload;
+	public int clip;
 	public Transform firstBsp;
 	public Transform secondBsp;
 	[Tooltip("false - only first bsp")]
 	public bool twoBsp;
 	public AudioClip shotSound;
+	[HideInInspector]
+	public int clipcounter;
+	[HideInInspector]
+	public bool startReload = false;
 	}

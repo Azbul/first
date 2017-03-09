@@ -171,7 +171,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   aiming: 1
   target: {fileID: 0}
-  rotatingSpeed: 2
+  rotatingSpeed: 5
   speed: 30
   damage: 20
-  Ballistic: 2
+  Ballistic: 4

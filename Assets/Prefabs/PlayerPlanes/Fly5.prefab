@@ -163,7 +163,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000011784817058}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.02, y: 0, z: 1.08}
+  m_LocalPosition: {x: -2.21, y: 0, z: 1.08}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -189,7 +189,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000011101425998}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -3.15}
+  m_LocalPosition: {x: 0, y: 0, z: -3.29}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -202,7 +202,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000013060379834}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.02, y: 0, z: 1.08}
+  m_LocalPosition: {x: 2.21, y: 0, z: 1.08}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -357,43 +357,46 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8434058b44d34bd449d4829cc65f23d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponSelect: 3
+  weaponSelect: 2
   gun:
     shell: {fileID: 4000010732676768, guid: 63185e00ca227cd4fa0696abd5f5b8d6, type: 2}
-    shellDamage: 0
-    shellSpeed: 0
-    interval: 0.15
+    shellDamage: 5
+    shellSpeed: 200
+    interval: 0.05
+    canReload: 0
+    clip: 0
     firstBsp: {fileID: 4000013087419988}
     secondBsp: {fileID: 4000010183509424}
     twoBsp: 1
     shotSound: {fileID: 0}
-  hardGun:
-    shell: {fileID: 0}
-    shellDamage: 0
-    shellSpeed: 0
-    interval: 1
-    firstBsp: {fileID: 0}
-    secondBsp: {fileID: 0}
-    twoBsp: 0
-    shotSound: {fileID: 0}
+    clipcounter: 0
+    startReload: 0
   rocket:
     shell: {fileID: 4000012708702672, guid: 7911614d585d96e44b9094b5f93d3710, type: 2}
-    shellDamage: 20
+    shellDamage: 30
     shellSpeed: 100
     interval: 0.05
+    canReload: 1
+    clip: 20
     firstBsp: {fileID: 4000011756353554}
     secondBsp: {fileID: 4000010958357992}
     twoBsp: 1
     shotSound: {fileID: 0}
+    clipcounter: 0
+    startReload: 0
   secondRocket:
-    shell: {fileID: 4000011364206140, guid: 993957a055e6bc946b47df74aa6f1aa5, type: 2}
-    shellDamage: 20
-    shellSpeed: 100
-    interval: 0.5
-    firstBsp: {fileID: 4000013087419988}
-    secondBsp: {fileID: 4000010183509424}
-    twoBsp: 1
+    shell: {fileID: 0}
+    shellDamage: 0
+    shellSpeed: 0
+    interval: 0
+    canReload: 0
+    clip: 0
+    firstBsp: {fileID: 0}
+    secondBsp: {fileID: 0}
+    twoBsp: 0
     shotSound: {fileID: 0}
+    clipcounter: 0
+    startReload: 0
 --- !u!114 &114000013304547308
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -411,4 +414,4 @@ MonoBehaviour:
   tilt: 150
   camfollowSmooth: 500
   camrotSmooth: 2
-  camHeight: 80
+  camHeight: 100
