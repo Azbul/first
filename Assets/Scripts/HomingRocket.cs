@@ -39,7 +39,7 @@ public class HomingRocket : BulletsParent
 		{
 		if (col.gameObject.name != tr.name)
 			{
-			Plane planeScript = col.gameObject.GetComponent<Plane>();
+			DamageParent planeScript = col.gameObject.GetComponent<DamageParent>();
 			if(planeScript)
 				{
 				string name = tr.name;

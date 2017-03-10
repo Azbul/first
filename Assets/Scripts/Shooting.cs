@@ -28,7 +28,8 @@ public class Shooting : MonoBehaviour {
 		yield return new WaitForSeconds(3.0f);
 		gs.clipcounter = 0;
 		gs.startReload = false;
-		Debug.Log("reloaded");
+		Debug.Log("rel-d");
+		//сообщение о перезарядке
 		}
 
 	void Update () 
@@ -38,6 +39,10 @@ public class Shooting : MonoBehaviour {
 			{
 			shootInterval = 0.1f;
 			weaponSelect = weaponSelect + 1;
+			if((int)weaponSelect == 1 && rocket.shell == null)
+				weaponSelect = weaponSelect + 1;
+			if((int)weaponSelect == 2 && secondRocket.shell == null)
+				weaponSelect = weaponSelect + 1;
 			if((int)weaponSelect > Enum.GetNames(typeof(Weapons)).Length - 1)
 				weaponSelect = 0;
 			}
@@ -47,41 +52,39 @@ public class Shooting : MonoBehaviour {
 			weaponSelect = weaponSelect - 1;
 			if((int)weaponSelect < 0)
 				weaponSelect = (Weapons)Enum.GetNames(typeof(Weapons)).Length - 1;
+			if((int)weaponSelect == 2 && secondRocket.shell == null)
+				weaponSelect = weaponSelect - 1;
+			if((int)weaponSelect == 1 && rocket.shell == null)
+				weaponSelect = weaponSelect - 1;
 			}
 
-
-	if(shootinterTimer < shootInterval)
-		{
-		shootinterTimer += Time.deltaTime;
-		}
-	
-	if(shootinterTimer > shootInterval) 
-		{
-		if(Input.GetKey(KeyCode.Space))
+		if(shootinterTimer < shootInterval)
 			{
-			switch (weaponSelect)
+			shootinterTimer += Time.deltaTime;
+			}
+		
+		if(shootinterTimer > shootInterval) 
+			{
+			if(Input.GetKey(KeyCode.Space))
 				{
-				case Weapons.gun : ShootRealisation(gun); 
-					break;
-				case Weapons.rocket : ShootRealisation(rocket); 
-					break;
-				case Weapons.secondRocket : ShootRealisation(secondRocket); // нужно реализовать if target != 0, то стреляем,
-					break;                                                  // т.е. только тогда, когда есть цель. Поведение aim
-				}                                                           // ракеты после исчезновения цели делать в Rocket.cs.
+				switch (weaponSelect)
+					{
+					case Weapons.gun : ShootRealisation(gun); 
+						break;
+					case Weapons.rocket : ShootRealisation(rocket); 
+						break;
+					case Weapons.secondRocket : ShootRealisation(secondRocket); // нужно реализовать if target != 0, то стреляем,
+						break;                                                  // т.е. только тогда, когда есть цель. Поведение aim
+					}                                                           // ракеты после исчезновения цели делать в Rocket.cs.
+				}
 			}
 		}
-	}
 
 
 	void ShootRealisation(GunSetting gs)
 		{
 		if(gs.clipcounter >= gs.clip && gs.canReload) 
 			{
-			if(!gs.startReload)
-				{
-				StartCoroutine(Reload(gs));
-				gs.startReload = true;	
-				}
 			return;
 			}
 		
@@ -111,6 +114,13 @@ public class Shooting : MonoBehaviour {
 		gs.clipcounter++;
 		shootinterTimer = 0f;
 
+
+		if(!gs.startReload && gs.canReload && gs.clipcounter >= gs.clip)
+			{
+			StartCoroutine(Reload(gs));
+			gs.startReload = true;	
+			}
+	
 		//        ---   THIS IS SECOND REALISATION OF SHOOTING   ---
 		/* if(shootinterTimer == 0f)
 					{

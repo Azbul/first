@@ -1,9 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-	public class Enemy : Plane {
+	public class Enemy : DamageParent {
+
+	public float hp = 100f;
+	public float speed;
 
 	private MainBehaviour mb;
+	private Transform thisTr;
 
 
 	void Start () {

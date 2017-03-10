@@ -52,7 +52,7 @@ public class Rocket : BulletsParent
 		{
 		if (col.gameObject.name != tr.name)
 			{
-			Plane planeScript = col.gameObject.GetComponent<Plane>();
+			DamageParent planeScript = col.gameObject.GetComponent<DamageParent>();
 			if(planeScript)
 				{
 				string name = tr.name;
@@ -65,9 +65,14 @@ public class Rocket : BulletsParent
 	void FixedUpdate () 
 		{
 
-		rb.AddForce(tr.right*ballistic, ForceMode.Impulse);
+		rb.AddForce(tr.right*ballistic, ForceMode.Impulse); //если тормозит, сделать через интервал
 		if(aiming)	
 			{
+			if(target == null)
+				{
+				aiming = false;
+				return;
+				}
 		Vector3 point2Target = tr.position - target.transform.position;
 
 		point2Target.Normalize ();

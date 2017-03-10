@@ -279,7 +279,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000010349804918}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.72, y: 0.5, z: 5.85}
@@ -291,7 +291,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000010349804918}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 5.57, y: 0.5, z: 1.19}
@@ -369,7 +369,7 @@ MonoBehaviour:
     secondBsp: {fileID: 4000011284144120}
     twoBsp: 1
     shotSound: {fileID: 0}
-    clipcounter: 0
+    clipcounter: 75
     startReload: 0
   rocket:
     shell: {fileID: 4000011364206140, guid: 993957a055e6bc946b47df74aa6f1aa5, type: 2}
@@ -382,7 +382,7 @@ MonoBehaviour:
     secondBsp: {fileID: 4000013923055266}
     twoBsp: 1
     shotSound: {fileID: 0}
-    clipcounter: 0
+    clipcounter: 1
     startReload: 0
   secondRocket:
     shell: {fileID: 0}
@@ -409,9 +409,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 1000
-  speed: 55
-  rotSpeed: 100
-  tilt: 100
+  speed: 50
+  rotSpeed: 110
+  tilt: 120
   camfollowSmooth: 500
   camrotSmooth: 2
-  camHeight: 100
+  camHeight: 120

@@ -2,7 +2,7 @@
 using System;
 using System.Collections;
 
-public class Plane: MonoBehaviour {
+	public class Plane: DamageParent {
 
 	public float hp = 100f;
 	public float speed;
@@ -74,7 +74,7 @@ public class Plane: MonoBehaviour {
 
 	   
 
-	public virtual void SetDamage(float damage, string name)
+	public override void SetDamage(float damage, string name)
 		{
 		hp -= damage;
 		if(hp > 0) 

@@ -220,8 +220,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000011833188084}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.62, y: 0, z: -0.92}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.6200008, y: 0, z: -0.91999817}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -233,8 +233,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000010388024974}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.62, y: 0, z: -0.92}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.62, y: 0, z: -0.91999817}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -416,12 +416,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 1000
-  speed: 63
+  speed: 57
   rotSpeed: 120
   tilt: 250
   camfollowSmooth: 500
-  camrotSmooth: 3.04
-  camHeight: 100
+  camrotSmooth: 3
+  camHeight: 150
 --- !u!114 &114000013425023082
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -433,7 +433,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8434058b44d34bd449d4829cc65f23d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponSelect: 3
+  weaponSelect: 0
   gun:
     shell: {fileID: 4000010732676768, guid: 63185e00ca227cd4fa0696abd5f5b8d6, type: 2}
     shellDamage: 5
@@ -451,9 +451,9 @@ MonoBehaviour:
     shell: {fileID: 4000012708702672, guid: 7911614d585d96e44b9094b5f93d3710, type: 2}
     shellDamage: 50
     shellSpeed: 100
-    interval: 0.4
+    interval: 0.25
     canReload: 1
-    clip: 6
+    clip: 8
     firstBsp: {fileID: 4000011169522018}
     secondBsp: {fileID: 4000012318057140}
     twoBsp: 1
@@ -465,7 +465,7 @@ MonoBehaviour:
     shellDamage: 100
     shellSpeed: 100
     interval: 0.4
-    canReload: 0
+    canReload: 1
     clip: 8
     firstBsp: {fileID: 4000011940992858}
     secondBsp: {fileID: 4000012316334094}
