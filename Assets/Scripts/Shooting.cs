@@ -28,7 +28,6 @@ public class Shooting : MonoBehaviour {
 		yield return new WaitForSeconds(3.0f);
 		gs.clipcounter = 0;
 		gs.startReload = false;
-		Debug.Log("rel-d");
 		//сообщение о перезарядке
 		}
 

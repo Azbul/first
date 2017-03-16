@@ -131,7 +131,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000011936724968}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.11, y: 0, z: 1.2400055}
+  m_LocalPosition: {x: -1.5, y: 0, z: 1.24}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -144,7 +144,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000010758748252}
   m_LocalRotation: {x: -0, y: 0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.44, y: 0, z: 1.24}
+  m_LocalPosition: {x: 3, y: 0, z: 1.24}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -157,7 +157,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000011121380914}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.019411, y: 20, z: 176.5506}
+  m_LocalPosition: {x: 30.013922, y: 20, z: 189.81331}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -176,7 +176,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000011573548748}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.11, y: 0, z: 1.2400055}
+  m_LocalPosition: {x: 1.5, y: 0, z: 1.24}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -189,7 +189,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000013323957176}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.44, y: 0, z: 1.24}
+  m_LocalPosition: {x: -3, y: 0, z: 1.24}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -216,7 +216,7 @@ Transform:
   m_GameObject: {fileID: 1000012942400334}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 272.00482, y: 1, z: 225.3403}
+  m_LocalScale: {x: 334.3905, y: 1.2293549, z: 277.0232}
   m_LocalEulerAnglesHint: {x: 0, y: 180.00002, z: -26.099998}
   m_Children: []
   m_Father: {fileID: 4000012199821458}
@@ -282,7 +282,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.79, y: 0.5, z: 4.42}
+  m_Size: {x: 1, y: 0.5, z: 5.27}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!65 &65000013000856546
 BoxCollider:
@@ -294,7 +294,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 5.13, y: 0.5, z: 1.03}
+  m_Size: {x: 6.35, y: 0.5, z: 1.17}
   m_Center: {x: 0, y: 0, z: -0.36}
 --- !u!96 &96000010057575140
 TrailRenderer:

@@ -21,7 +21,7 @@ public class Rocket : BulletsParent
 	void Start () {
 		tr = transform;
 		rb = GetComponent<Rigidbody>();
-		target = GameObject.FindGameObjectWithTag("Respawn");
+		target = GameObject.FindGameObjectWithTag("Enemy");
 		}
 
 

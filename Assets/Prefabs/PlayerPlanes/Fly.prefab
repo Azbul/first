@@ -101,7 +101,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000011542798114}
   m_LocalRotation: {x: -0, y: 0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.8, y: 0, z: 2.07}
+  m_LocalPosition: {x: 1.1, y: 0, z: 2.07}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -114,7 +114,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000011770538640}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.8, y: 0, z: 2.07}
+  m_LocalPosition: {x: -1.1, y: 0, z: 2.07}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -128,7 +128,7 @@ Transform:
   m_GameObject: {fileID: 1000011166337178}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 178.33609, y: 1, z: 173.47864}
+  m_LocalScale: {x: 242.98302, y: 1, z: 208.174}
   m_LocalEulerAnglesHint: {x: 0, y: 180.00002, z: -26.099998}
   m_Children: []
   m_Father: {fileID: 4000012142533942}
@@ -140,7 +140,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000013309891828}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 10.847127, y: 20, z: 169.3618}
+  m_LocalPosition: {x: 15.860979, y: 20, z: 177.67314}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -224,8 +224,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3.57, y: 0.5, z: 0.84}
-  m_Center: {x: 0, y: 0, z: 0.5}
+  m_Size: {x: 4.85, y: 0.5, z: 0.84}
+  m_Center: {x: 0, y: 0, z: 0.61}
 --- !u!65 &65000012855077476
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -236,7 +236,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.54, y: 0.5, z: 3.36}
+  m_Size: {x: 0.68, y: 0.5, z: 4.12}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!96 &96000010262090088
 TrailRenderer:
@@ -351,9 +351,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 100
-  speed: 20
+  speed: 25
   rotSpeed: 140
-  tilt: 150
+  tilt: 130
   camfollowSmooth: 500
-  camrotSmooth: 2
+  camrotSmooth: 3
   camHeight: 70

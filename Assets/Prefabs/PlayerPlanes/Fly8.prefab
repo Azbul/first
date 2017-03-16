@@ -200,7 +200,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012156029706}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 17.983572, y: 20, z: 167.83812}
+  m_LocalPosition: {x: 63.275654, y: 20, z: 183.89088}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -436,7 +436,7 @@ MonoBehaviour:
   weaponSelect: 0
   gun:
     shell: {fileID: 4000010732676768, guid: 63185e00ca227cd4fa0696abd5f5b8d6, type: 2}
-    shellDamage: 5
+    shellDamage: 10
     shellSpeed: 300
     interval: 0.05
     canReload: 0

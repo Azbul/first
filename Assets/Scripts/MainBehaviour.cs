@@ -96,7 +96,7 @@ public class MainBehaviour : MonoBehaviour {
 						case 12 : 
 						case 13 :
 						case 14 :
-							players[i] = (GameObject)Instantiate(enemyPlanes[4]); 
+							players[i] = (GameObject)Instantiate(enemyPlanes[4]);   //если очки одинаковые??
 							players[i].name += i.ToString();
 							break;
 						}

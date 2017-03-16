@@ -26,7 +26,7 @@ GameObject:
   - 114: {fileID: 114000010750206312}
   m_Layer: 0
   m_Name: Sphere
-  m_TagString: Respawn
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -110,9 +110,6 @@ MonoBehaviour:
   speed: 20
   rotSpeed: 0
   tilt: 0
-  camfollowSmooth: 5
-  camrotSmooth: 0.8
-  camHeight: 0
 --- !u!135 &135000013279843000
 SphereCollider:
   m_ObjectHideFlags: 1
