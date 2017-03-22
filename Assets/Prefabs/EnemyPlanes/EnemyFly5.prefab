@@ -168,8 +168,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000011532493204}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 38.63565, y: 20, z: 165.76357}
+  m_LocalRotation: {x: 0, y: 0.023898046, z: 0, w: 0.99971443}
+  m_LocalPosition: {x: -5.6533866, y: 20, z: 3.7941475}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -213,7 +213,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000010415071610}
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalRotation: {x: -0.0014125176, y: 0.99999905, z: 6.17431e-11, w: -0.00000004371134}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 277, y: 1, z: 365.19983}
   m_LocalEulerAnglesHint: {x: 0, y: 180.00002, z: -26.099998}
@@ -330,19 +330,19 @@ TrailRenderer:
   m_Colors:
     m_Color[0]:
       serializedVersion: 2
-      rgba: 851712
+      rgba: 16712192
     m_Color[1]:
       serializedVersion: 2
-      rgba: 4279041792
+      rgba: 4294902272
     m_Color[2]:
       serializedVersion: 2
-      rgba: 4279041792
+      rgba: 4294902272
     m_Color[3]:
       serializedVersion: 2
-      rgba: 4279041792
+      rgba: 4294902272
     m_Color[4]:
       serializedVersion: 2
-      rgba: 851712
+      rgba: 16712192
   m_MinVertexDistance: 0.1
   m_Autodestruct: 0
 --- !u!114 &114000011732793852
@@ -360,3 +360,5 @@ MonoBehaviour:
   speed: 45
   rotSpeed: 110
   tilt: 150
+  setAngle: 28
+  direct: 0

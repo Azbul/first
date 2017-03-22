@@ -175,7 +175,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012104800914}
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalRotation: {x: 0.0013442241, y: 0.9999991, z: -5.875788e-11, w: -0.00000004371135}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 320.29153, y: 1, z: 379.1091}
   m_LocalEulerAnglesHint: {x: 0, y: 180.00002, z: -26.099998}
@@ -188,8 +188,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012672210482}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 38.67, y: 20, z: 176.82}
+  m_LocalRotation: {x: 0, y: -0.7822186, z: 0, w: 0.62300414}
+  m_LocalPosition: {x: 188.05266, y: 20, z: 183.17928}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -418,19 +418,19 @@ TrailRenderer:
   m_Colors:
     m_Color[0]:
       serializedVersion: 2
-      rgba: 851712
+      rgba: 65500
     m_Color[1]:
       serializedVersion: 2
-      rgba: 4279041792
+      rgba: 4278255580
     m_Color[2]:
       serializedVersion: 2
-      rgba: 4279041792
+      rgba: 4278255580
     m_Color[3]:
       serializedVersion: 2
-      rgba: 4279041792
+      rgba: 4278255580
     m_Color[4]:
       serializedVersion: 2
-      rgba: 851712
+      rgba: 65500
   m_MinVertexDistance: 0.1
   m_Autodestruct: 0
 --- !u!96 &96000012765740050
@@ -468,19 +468,19 @@ TrailRenderer:
   m_Colors:
     m_Color[0]:
       serializedVersion: 2
-      rgba: 851712
+      rgba: 65500
     m_Color[1]:
       serializedVersion: 2
-      rgba: 4279041792
+      rgba: 4278255580
     m_Color[2]:
       serializedVersion: 2
-      rgba: 4279041792
+      rgba: 4278255580
     m_Color[3]:
       serializedVersion: 2
-      rgba: 4279041792
+      rgba: 4278255580
     m_Color[4]:
       serializedVersion: 2
-      rgba: 851712
+      rgba: 65500
   m_MinVertexDistance: 0.1
   m_Autodestruct: 0
 --- !u!114 &114000012573824276
@@ -494,7 +494,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff7a0a2f756a1bb44b59400b459e70a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 10011
+  hp: 9921
   speed: 60
   rotSpeed: 130
   tilt: 200
+  setAngle: 216
+  direct: 1
