@@ -3,7 +3,7 @@ using System.Collections;
 
 public class MapOut : MonoBehaviour 
 	{
-	void OnTriggerExit(Collider col)
+	void OnTriggerEnter(Collider col)
 		{
 		DamageParent plane = col.gameObject.GetComponent<DamageParent>();
 		if (plane)

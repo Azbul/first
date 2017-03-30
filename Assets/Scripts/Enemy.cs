@@ -8,17 +8,20 @@ using System.Collections;
 	public float speed;
 	public float rotSpeed;
 	public float tilt;
-	public float setAngle;
+	public float viewAngle;
+	public float viewRadius;
+	public LayerMask viewRadiusMask;
 
-	private MainBehaviour mb;
-	private Transform thisTr;
-	private bool stabiling;
-	private Transform planeTrans;
-	private bool scoreSend;
+	private int direct;
+	private float setAngle;
 	private float timer;
 	private float setRotation;
+	private MainBehaviour mb;
+	private Transform thisTr;
+	private Transform planeTrans;
+	private bool stabiling;
+	private bool scoreSend;
 	private bool canRot;
-	public int direct;
 	private bool mapOutbool;
 
 
@@ -29,7 +32,6 @@ using System.Collections;
 		mb = Camera.main.GetComponent<MainBehaviour>();
 		planeTrans = thisTr.Find("Plane");
 		scoreSend = true;
-
 		}
 
 
@@ -39,7 +41,7 @@ using System.Collections;
 			{
 			timer += Time.deltaTime;
 			}
-		else
+		else if (!mapOutbool)
 			{
 			canRot = true;
 			timer = 0;
@@ -67,6 +69,20 @@ using System.Collections;
 			}*/
 		}
 	
+	void FindEnemy()
+		{
+		Collider[] EnemyInRadius = Physics.OverlapSphere(thisTr.position, viewRadius, viewRadiusMask);
+		for (int i = 0; i < EnemyInRadius.Length; i++)
+			{
+			Transform target = EnemyInRadius[i].transform;
+			Vector3 dirToTarget = (target.position - thisTr.position).normalized;
+			if (Vector3.Angle(thisTr.forward, dirToTarget) <= viewAngle / 2)
+				{
+
+				}
+			}
+		}
+
 	void Rotat(float angle, int direct) 
 		{
 		if (setRotation < angle)
@@ -126,6 +142,12 @@ using System.Collections;
 			mb.StartCor();
 			Destroy(gameObject);
 			}
+		}
+
+	void OnDrawGizmos()
+		{
+		Gizmos.color = Color.yellow;
+		Gizmos.DrawWireSphere(transform.position, viewRadius);
 		}
 
 	}

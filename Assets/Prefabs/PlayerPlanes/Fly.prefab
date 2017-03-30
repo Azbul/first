@@ -356,4 +356,4 @@ MonoBehaviour:
   tilt: 130
   camfollowSmooth: 500
   camrotSmooth: 3
-  camHeight: 70
+  camHeight: 90

@@ -24,7 +24,7 @@ public class Bullet : BulletsParent {
 
 	void OnTriggerEnter(Collider col)
 		{ 
-		if (col.gameObject.name != tr.name)
+		if (col.gameObject.name != tr.name && col.gameObject.tag != "MapOut")
 			{
 			DamageParent planeScript = col.gameObject.GetComponent<DamageParent>();
 			if(planeScript)

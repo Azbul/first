@@ -21,6 +21,11 @@ using System.Collections;
 	private bool stabiling;
 	protected MainBehaviour bahaha;
 
+	//ВРЕМЕННЫЕ ПЕРЕМЕННЫЕ
+	public float viewRadius;
+	public float viewAngle;
+	public LayerMask viewRadiusMask;
+
 	void Start() 
 		{
 		camtr = Camera.main.GetComponent<Transform>();
@@ -89,6 +94,24 @@ using System.Collections;
 			}
 		}
 
+	void OnDrawGizmos()
+		{
+		Gizmos.color = Color.yellow;
+		Gizmos.DrawWireSphere(transform.position, viewRadius);
+		}
 
+	void FindEnemy()
+		{
+		Collider[] EnemyInRadius = Physics.OverlapSphere(thisTr.position, viewRadius, viewRadiusMask);
+		for (int i = 0; i < EnemyInRadius.Length; i++)
+			{
+			Transform target = EnemyInRadius[i].transform;
+			Vector3 dirToTarget = (target.position - thisTr.position).normalized;
+			if (Vector3.Angle(thisTr.forward, dirToTarget) <= viewAngle / 2)
+				{
+
+				}
+			}
+		}
 
 	}
