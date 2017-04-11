@@ -32,6 +32,7 @@ using System.Collections;
 		bahaha = camtr.GetComponent<MainBehaviour>();
 		thisTr = transform;
 		planeTrans = thisTr.Find("Plane");
+
 		}
 
 
@@ -77,8 +78,6 @@ using System.Collections;
 			}
 		}
 
-	   
-
 	public override void SetDamage(float damage, string name)
 		{
 		hp -= damage;
@@ -91,26 +90,6 @@ using System.Collections;
 			bahaha.Scores(name);
 			bahaha.StartCor();
 			Destroy(gameObject);
-			}
-		}
-
-	void OnDrawGizmos()
-		{
-		Gizmos.color = Color.yellow;
-		Gizmos.DrawWireSphere(transform.position, viewRadius);
-		}
-
-	void FindEnemy()
-		{
-		Collider[] EnemyInRadius = Physics.OverlapSphere(thisTr.position, viewRadius, viewRadiusMask);
-		for (int i = 0; i < EnemyInRadius.Length; i++)
-			{
-			Transform target = EnemyInRadius[i].transform;
-			Vector3 dirToTarget = (target.position - thisTr.position).normalized;
-			if (Vector3.Angle(thisTr.forward, dirToTarget) <= viewAngle / 2)
-				{
-
-				}
 			}
 		}
 

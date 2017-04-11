@@ -11,6 +11,7 @@ using System.Collections;
 	public float viewAngle;
 	public float viewRadius;
 	public LayerMask viewRadiusMask;
+	public Transform attackEnemy;
 
 	private int direct;
 	private float setAngle;
@@ -32,12 +33,13 @@ using System.Collections;
 		mb = Camera.main.GetComponent<MainBehaviour>();
 		planeTrans = thisTr.Find("Plane");
 		scoreSend = true;
+		StartCoroutine("FindEnemyCor", 0.2f);
 		}
 
 
 	void Update () 
 		{
-		if (timer < 3f && !mapOutbool)
+		if (timer < 1000f && !mapOutbool)
 			{
 			timer += Time.deltaTime;
 			}
@@ -62,26 +64,43 @@ using System.Collections;
 				planeTrans.localRotation = Quaternion.Lerp(planeTrans.localRotation, Quaternion.Euler(0, 180, 0), tilt/20*Time.deltaTime);
 				}
 			}
-
+		if (attackEnemy != null)
+			Debug.DrawLine(thisTr.position, attackEnemy.position, Color.cyan);
 		/*if()
 			{
 			stabiling = true;
 			}*/
 		}
 	
-	void FindEnemy()
+	IEnumerator FindEnemyCor(float time)
 		{
-		Collider[] EnemyInRadius = Physics.OverlapSphere(thisTr.position, viewRadius, viewRadiusMask);
-		for (int i = 0; i < EnemyInRadius.Length; i++)
+		while(true)
 			{
-			Transform target = EnemyInRadius[i].transform;
-			Vector3 dirToTarget = (target.position - thisTr.position).normalized;
-			if (Vector3.Angle(thisTr.forward, dirToTarget) <= viewAngle / 2)
-				{
-
-				}
+			FindEnemy();
+			yield return new WaitForSeconds(time);
 			}
 		}
+
+		void FindEnemy()
+			{
+			Collider[] EnemyInRadius = Physics.OverlapSphere(thisTr.position, viewRadius, viewRadiusMask);
+			for (int i = 0; i < EnemyInRadius.Length; i++)
+				{
+
+				Transform target = EnemyInRadius[i].transform;
+				if (target.name != thisTr.name)
+					{
+					Debug.Log("Enemy In Radius");
+					Vector3 dirToTarget = (target.position - thisTr.position).normalized;
+					if (Vector3.Angle(thisTr.forward, dirToTarget) <= viewAngle / 2)
+						{
+						Debug.DrawLine(thisTr.position, target.position, Color.white);
+						attackEnemy = target;
+						StopCoroutine("FindEnemyCor");
+						}
+					}
+				}
+			}
 
 	void Rotat(float angle, int direct) 
 		{
@@ -137,7 +156,7 @@ using System.Collections;
 			}
 		else if(scoreSend)
 			{
-			scoreSend = false;
+			scoreSend = false; 
 			mb.Scores(name);
 			mb.StartCor();
 			Destroy(gameObject);
@@ -149,5 +168,4 @@ using System.Collections;
 		Gizmos.color = Color.yellow;
 		Gizmos.DrawWireSphere(transform.position, viewRadius);
 		}
-
 	}
