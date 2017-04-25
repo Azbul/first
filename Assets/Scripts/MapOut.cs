@@ -9,7 +9,6 @@ public class MapOut : MonoBehaviour
 		if (plane)
 			{
 			plane.mapOut();
-			Debug.Log("Exit");
 			}
 		}
 	}

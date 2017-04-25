@@ -39,7 +39,7 @@ GameObject:
   - 65: {fileID: 65000010265685186}
   - 65: {fileID: 65000010287229626}
   - 114: {fileID: 114000013862888802}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: EnemyFly8
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -418,5 +418,9 @@ MonoBehaviour:
   speed: 57
   rotSpeed: 120
   tilt: 250
-  setAngle: 70
-  direct: 1
+  viewAngle: 200
+  viewRadius: 120
+  viewRadiusMask:
+    serializedVersion: 2
+    m_Bits: 256
+  attackEnemy: {fileID: 0}

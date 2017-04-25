@@ -101,7 +101,7 @@ GameObject:
   - 65: {fileID: 65000011711516076}
   - 114: {fileID: 114000011182974430}
   - 114: {fileID: 114000013425023082}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Fly8
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -422,6 +422,11 @@ MonoBehaviour:
   camfollowSmooth: 500
   camrotSmooth: 3
   camHeight: 150
+  viewRadius: 0
+  viewAngle: 0
+  viewRadiusMask:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!114 &114000013425023082
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -56,7 +56,7 @@ GameObject:
   - 65: {fileID: 65000014088860390}
   - 65: {fileID: 65000013403433938}
   - 114: {fileID: 114000011965435330}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: EnemyFly
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -113,7 +113,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012001969554}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 9.2, y: 20, z: 164.2}
+  m_LocalPosition: {x: 44.02, y: 20, z: 182.44}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -298,7 +298,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff7a0a2f756a1bb44b59400b459e70a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 100
-  speed: 20
+  hp: 500
+  speed: 25
   rotSpeed: 140
   tilt: 150
+  viewAngle: 200
+  viewRadius: 60
+  viewRadiusMask:
+    serializedVersion: 2
+    m_Bits: 256
+  attackEnemy: {fileID: 0}

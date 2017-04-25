@@ -17,13 +17,13 @@ using System.Collections;
 	private float setAngle;
 	private float timer;
 	private float setRotation;
-	private MainBehaviour mb;
-	private Transform thisTr;
-	private Transform planeTrans;
 	private bool stabiling;
 	private bool scoreSend;
 	private bool canRot;
 	private bool mapOutbool;
+	private MainBehaviour mb;
+	private Transform thisTr;
+	private Transform planeTrans;
 
 
 	void Start () {
@@ -39,23 +39,24 @@ using System.Collections;
 
 	void Update () 
 		{
-		if (timer < 1000f && !mapOutbool)
+		/////// AI ROTATION //////////
+		if (timer < 5f && !mapOutbool)   //если атакуют, то 1f; свободный полет - 5f;
 			{
 			timer += Time.deltaTime;
 			}
-		else if (!mapOutbool)
+		else if (!mapOutbool && attackEnemy == null)
 			{
 			canRot = true;
 			timer = 0;
 			direct = UnityEngine.Random.Range(0, 2);
-			setAngle = UnityEngine.Random.Range(10, 360);
+			setAngle = UnityEngine.Random.Range(60, 180);
 			}
 
 		if (mapOutbool)
 			Rotat(180, 1);
 		else if (canRot)
 			Rotat(setAngle, direct);
-
+		/////// END AI ROTATION //////////
 		thisTr.Translate(Vector3.forward*speed*Time.deltaTime);
 		if(stabiling)
 			{
@@ -64,12 +65,51 @@ using System.Collections;
 				planeTrans.localRotation = Quaternion.Lerp(planeTrans.localRotation, Quaternion.Euler(0, 180, 0), tilt/20*Time.deltaTime);
 				}
 			}
-		if (attackEnemy != null)
-			Debug.DrawLine(thisTr.position, attackEnemy.position, Color.cyan);
-		/*if()
+
+		if (attackEnemy != null && !mapOutbool)
 			{
-			stabiling = true;
-			}*/
+			Debug.DrawLine(thisTr.position, attackEnemy.position, Color.cyan);
+			float dist = Vector3.Distance(attackEnemy.position, thisTr.position);
+			Vector3 dirToTarget = (attackEnemy.position - thisTr.position).normalized;
+			if (dist < viewRadius)
+				{
+				float angle = GetAngle(thisTr.forward, dirToTarget);
+				float dot = Vector3.Dot(thisTr.right, dirToTarget);
+				//if (dist < 5)
+					//Rotat(60, direct);
+				//else
+					//{	
+					if (timer > 2f)
+						{
+						Rotat(30, direct);
+						timer = timer>3f ? 0 : timer;
+						}
+					else if (dot != 0 && angle > 5) 
+						{                  
+						direct = UnityEngine.Random.Range(0, 2);
+						if (dot > 0)
+							turnRight();  
+						if (dot < 0)
+							TurnLeft();
+						}
+					else 
+						stabiling = true;
+					//}
+				if (angle < 5)
+					Debug.Log("Attack!!");
+				}
+			else
+				{
+				attackEnemy = null;
+				StartCoroutine("FindEnemyCor", 0.2f);
+				}
+			}
+		else
+			{
+
+			}
+
+		
 		}
 	
 	IEnumerator FindEnemyCor(float time)
@@ -81,30 +121,36 @@ using System.Collections;
 			}
 		}
 
-		void FindEnemy()
+	void FindEnemy()
+		{
+		Collider[] EnemyInRadius = Physics.OverlapSphere(thisTr.position, viewRadius, viewRadiusMask);
+		for (int i = 0; i < EnemyInRadius.Length; i++)
 			{
-			Collider[] EnemyInRadius = Physics.OverlapSphere(thisTr.position, viewRadius, viewRadiusMask);
-			for (int i = 0; i < EnemyInRadius.Length; i++)
+			Transform target = EnemyInRadius[i].transform;
+			if (target.name != thisTr.name)
 				{
-
-				Transform target = EnemyInRadius[i].transform;
-				if (target.name != thisTr.name)
+				Vector3 dirToTarget = (target.position - thisTr.position).normalized;
+				//Debug.Log("Angle =" + GetAngle(thisTr.forward, dirToTarget));
+				//Debug.Log("Dot = " + Vector3.Dot(thisTr.right, dirToTarget));
+				if (GetAngle(thisTr.forward, dirToTarget) <= viewAngle / 2)
 					{
-					Debug.Log("Enemy In Radius");
-					Vector3 dirToTarget = (target.position - thisTr.position).normalized;
-					if (Vector3.Angle(thisTr.forward, dirToTarget) <= viewAngle / 2)
-						{
-						Debug.DrawLine(thisTr.position, target.position, Color.white);
-						attackEnemy = target;
-						StopCoroutine("FindEnemyCor");
-						}
+					Debug.DrawLine(thisTr.position, target.position, Color.white);
+					attackEnemy = target;
+					StopCoroutine("FindEnemyCor");
 					}
 				}
 			}
+		}
+
+	float GetAngle(Vector3 v1, Vector3 v2)
+		{
+		return Vector3.Angle(v1, v2);
+		}
 
 	void Rotat(float angle, int direct) 
 		{
-		if (setRotation < angle)
+		Debug.Log("Rotat");
+		if (setRotation < angle) 
 			{
 			setRotation += rotSpeed*Time.deltaTime;
 			if (direct == 1)
