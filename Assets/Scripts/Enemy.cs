@@ -21,9 +21,11 @@ using System.Collections;
 	private bool scoreSend;
 	private bool canRot;
 	private bool mapOutbool;
+	private bool findEnemyCorBool;
 	private MainBehaviour mb;
 	private Transform thisTr;
 	private Transform planeTrans;
+
 
 
 	void Start () {
@@ -34,6 +36,7 @@ using System.Collections;
 		planeTrans = thisTr.Find("Plane");
 		scoreSend = true;
 		StartCoroutine("FindEnemyCor", 0.2f);
+
 		}
 
 
@@ -79,34 +82,40 @@ using System.Collections;
 					//Rotat(60, direct);
 				//else
 					//{	
-					if (timer > 2f)
-						{
-						Rotat(30, direct);
-						timer = timer>3f ? 0 : timer;
-						}
-					else if (dot != 0 && angle > 5) 
-						{                  
-						direct = UnityEngine.Random.Range(0, 2);
-						if (dot > 0)
-							turnRight();  
-						if (dot < 0)
-							TurnLeft();
-						}
-					else 
-						stabiling = true;
+				if (timer > 2f)
+					{
+					Rotat(10, direct);
+					timer = timer>3f ? 0 : timer;
+					}
+				else if (dot != 0 && angle > 5) 
+					{                  
+					direct = UnityEngine.Random.Range(0, 2);
+					if (dot > 0)
+						turnRight();  
+					if (dot < 0)
+						TurnLeft();
+					}
+				else 
+					stabiling = true;
 					//}
 				if (angle < 5)
 					Debug.Log("Attack!!");
 				}
-			else
+			else 
 				{
+				stabiling = true;
 				attackEnemy = null;
-				StartCoroutine("FindEnemyCor", 0.2f);
+				findEnemyCorBool = false;
 				}
 			}
-		else
+		else if (attackEnemy == null)
 			{
-
+			if (!findEnemyCorBool) //если не запущен
+				{
+				Debug.Log("Started");
+				StartCoroutine("FindEnemyCor", 0.2f);
+				findEnemyCorBool = true;
+				}
 			}
 
 		
@@ -134,9 +143,9 @@ using System.Collections;
 				//Debug.Log("Dot = " + Vector3.Dot(thisTr.right, dirToTarget));
 				if (GetAngle(thisTr.forward, dirToTarget) <= viewAngle / 2)
 					{
-					Debug.DrawLine(thisTr.position, target.position, Color.white);
 					attackEnemy = target;
 					StopCoroutine("FindEnemyCor");
+					findEnemyCorBool = false;
 					}
 				}
 			}
@@ -149,7 +158,6 @@ using System.Collections;
 
 	void Rotat(float angle, int direct) 
 		{
-		Debug.Log("Rotat");
 		if (setRotation < angle) 
 			{
 			setRotation += rotSpeed*Time.deltaTime;
