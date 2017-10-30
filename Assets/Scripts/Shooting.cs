@@ -8,18 +8,28 @@ public class Shooting : MonoBehaviour {
 	
 	public Weapons weaponSelect;
 
-	public GunSetting gun;
+	public float aimingTime = 5f;
+	public float rayDistance;
+	public Transform aimSprite;
+	public LayerMask aimMask;
+	//public GameObject aimPlane;
+	public GunSetting gun;   // = new GunSetting();???
 	public GunSetting rocket;
 	public GunSetting secondRocket;
 
 	private float shootInterval = 0.1f;
-	private string thisName;
 	private float shootinterTimer = 0f;
+	//public float aimRocketTimer;
+	private string thisName;
 	private Transform bsp;
+	private Transform thisTrans;
 
 
 	void Start () 
 		{
+		aimSprite.parent = null;
+		aimSprite.gameObject.SetActive(false);
+		thisTrans = transform;
 		thisName = gameObject.name;
 		}
 	
@@ -77,12 +87,50 @@ public class Shooting : MonoBehaviour {
 					}                                                           // ракеты после исчезновения цели делать в Rocket.cs.
 				}
 			}
+		if(aimingTransform)
+			{
+			aimingTime -= Time.deltaTime;
+			float distance = Vector3.Distance(thisTrans.position, aimingTransform.position);
+			if(distance < 100f && aimingTime > 0)
+				{
+				//aimSprite.position = new Vector3(aimingTransform.position.x, 21, aimingTransform.position.z);
+				aimSprite.position = Vector3.Lerp(aimSprite.position, new Vector3(aimingTransform.position.x, 21f, aimingTransform.position.z), 70*Time.deltaTime);
+				}
+			else
+				{
+				aimingTransform = null;
+				aimingTime = 5f;
+				}
+			}
+		else 
+			aimSprite.gameObject.SetActive(false);
+		
 		}
 
+    RaycastHit hit;
+	public Transform aimingTransform;
+
+	void FixedUpdate()
+		{
+		if(rocket.aiming && weaponSelect == Weapons.rocket || secondRocket.aiming && weaponSelect == Weapons.secondRocket)
+			{
+			if(aimingTransform == null)
+				{
+				if(Physics.Raycast(thisTrans.position, thisTrans.forward, out hit, rayDistance, aimMask))
+					{
+					Debug.DrawLine(thisTrans.position, hit.transform.position, Color.blue);
+					Debug.Log("Contact");
+					aimingTransform = hit.transform;
+					aimSprite.gameObject.SetActive(true);
+					}
+				}
+			}		
+		}
 
 	void ShootRealisation(GunSetting gs)
 		{
-		if(gs.clipcounter >= gs.clip && gs.canReload) 
+	
+		if(gs.clipcounter >= gs.clip && gs.canReload || gs.aiming && aimingTransform == null) 
 			{
 			return;
 			}
@@ -110,6 +158,8 @@ public class Shooting : MonoBehaviour {
 		bul.name = thisName; 
 		BulletsParent bp = bul.gameObject.GetComponent<BulletsParent>();
 		bp.Shellsetting(gs.shellSpeed, gs.shellDamage);
+		if(bp.isAiming())
+			bp.GetTarget(aimingTransform.gameObject);
 		gs.clipcounter++;
 		shootinterTimer = 0f;
 
@@ -159,6 +209,7 @@ public class GunSetting
 	public float interval;
 	public bool canReload;
 	public int clip;
+	public bool aiming;
 	public Transform firstBsp;
 	public Transform secondBsp;
 	[Tooltip("false - only first bsp")]

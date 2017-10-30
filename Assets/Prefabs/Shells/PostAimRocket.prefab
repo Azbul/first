@@ -173,5 +173,5 @@ MonoBehaviour:
   target: {fileID: 0}
   rocketTurnSpeed: 200
   speed: 20
-  turbulence: 10
+  turbulence: 4
   push: 50

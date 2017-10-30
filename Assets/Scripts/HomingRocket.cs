@@ -5,13 +5,13 @@ public class HomingRocket : BulletsParent
 	{
 
 	public float damage;
-	public Transform target;
+	public GameObject target;
 	public float rocketTurnSpeed = 90.0f;
 	public float speed = 10.0f;
-	public float turbulence = 10.0f;
+	public float turbulence;
 	public float push;
 
-
+	private Shooting shooter;
 	private float pushtime;
 	private Rigidbody rb;
 	private TrailRenderer trr;
@@ -20,7 +20,6 @@ public class HomingRocket : BulletsParent
 
 	void Start()
 		{
-		target = GameObject.FindGameObjectWithTag("Player").transform;
 		trr = GetComponent<TrailRenderer>();
 		trr.enabled = false;
 		rb = GetComponent<Rigidbody>();
@@ -29,11 +28,21 @@ public class HomingRocket : BulletsParent
 		rb.AddForce(tr.forward*speed, ForceMode.Impulse);
 		}
 
+	public override bool isAiming()
+		{
+		return true;
+		}
+
+	public override void GetTarget(GameObject target)
+		{
+		this.target = target;
+		}
+
 	public override void Shellsetting(float sp, float dm)
-	{
+		{
 		damage = dm;
 		speed = sp;
-	}
+		}
 
 	void OnTriggerEnter(Collider col)
 		{
@@ -63,15 +72,20 @@ public class HomingRocket : BulletsParent
 
 		if(postEnd)
 			{
+			if(target)
+				{
 			Vector3 direction = Distance( ) + Wiggle( );
 			direction.Normalize( );
 			tr.rotation = Quaternion.RotateTowards( tr.rotation, Quaternion.LookRotation( direction ), rocketTurnSpeed * Time.deltaTime );
 			tr.Translate( Vector3.forward * speed * Time.deltaTime );
+				}		
+			else
+				tr.Translate( Vector3.forward * speed * Time.deltaTime );
 			}
 		}
 	private Vector3 Distance ( )
 		{
-		return target.position - tr.position;
+		return target.transform.position - tr.position;
 		}
 	private Vector3 Wiggle ( )
 		{

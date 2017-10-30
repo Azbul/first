@@ -74,6 +74,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1000012728508210
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 4000010225911232}
+  m_Layer: 0
+  m_Name: 'FackeAim '
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1000013527828688
 GameObject:
   m_ObjectHideFlags: 0
@@ -87,7 +102,7 @@ GameObject:
   - 65: {fileID: 65000013436479414}
   - 114: {fileID: 114000012825674170}
   - 114: {fileID: 114000010504423918}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Fly2
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -122,8 +137,22 @@ Transform:
   - {fileID: 4000014121105062}
   - {fileID: 4000010119240114}
   - {fileID: 4000010666700964}
+  - {fileID: 4000010225911232}
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!4 &4000010225911232
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012728508210}
+  m_LocalRotation: {x: -0, y: 0, z: -0, w: 1}
+  m_LocalPosition: {x: 12.531483, y: 0, z: -10.938309}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 4000010153271604}
+  m_RootOrder: 4
 --- !u!4 &4000010245934084
 Transform:
   m_ObjectHideFlags: 1
@@ -300,13 +329,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponSelect: 0
+  aimingTime: 5
+  rayDistance: 0
+  aimSprite: {fileID: 4000010225911232}
+  aimMask:
+    serializedVersion: 2
+    m_Bits: 0
   gun:
     shell: {fileID: 4000010732676768, guid: 63185e00ca227cd4fa0696abd5f5b8d6, type: 2}
     shellDamage: 20
-    shellSpeed: 200
+    shellSpeed: 500
     interval: 0.15
     canReload: 0
     clip: 0
+    aiming: 0
     firstBsp: {fileID: 4000010119240114}
     secondBsp: {fileID: 4000010666700964}
     twoBsp: 1
@@ -320,6 +356,7 @@ MonoBehaviour:
     interval: 1
     canReload: 0
     clip: 0
+    aiming: 0
     firstBsp: {fileID: 0}
     secondBsp: {fileID: 0}
     twoBsp: 0
@@ -333,12 +370,14 @@ MonoBehaviour:
     interval: 1
     canReload: 0
     clip: 0
+    aiming: 0
     firstBsp: {fileID: 0}
     secondBsp: {fileID: 0}
     twoBsp: 0
     shotSound: {fileID: 0}
     clipcounter: 0
     startReload: 0
+  aimingTransform: {fileID: 0}
 --- !u!114 &114000012825674170
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -350,10 +389,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96c069d63ab786744bbf80ccd19df524, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 100
+  hp: 500
   speed: 25
   rotSpeed: 110
   tilt: 100
   camfollowSmooth: 500
-  camrotSmooth: 1.5
-  camHeight: 80
+  camrotSmooth: 0
+  camHeight: 150

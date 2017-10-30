@@ -39,7 +39,7 @@ GameObject:
   - 65: {fileID: 65000011852412564}
   - 114: {fileID: 114000010345265986}
   - 114: {fileID: 114000010495231842}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Fly4
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -73,6 +73,21 @@ GameObject:
   m_Name: gunR
   m_TagString: Untagged
   m_Icon: {fileID: -4738709637730668739, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1000012496267318
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 4000010800403768}
+  m_Layer: 0
+  m_Name: FackeAim
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -124,6 +139,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!4 &4000010800403768
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012496267318}
+  m_LocalRotation: {x: -0, y: 0, z: -0, w: 1}
+  m_LocalPosition: {x: 8.621729, y: 0, z: -24.049744}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 4000012199821458}
+  m_RootOrder: 6
 --- !u!4 &4000010856880998
 Transform:
   m_ObjectHideFlags: 1
@@ -167,6 +195,7 @@ Transform:
   - {fileID: 4000012375571528}
   - {fileID: 4000010856880998}
   - {fileID: 4000012329151288}
+  - {fileID: 4000010800403768}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!4 &4000012329151288
@@ -357,13 +386,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96c069d63ab786744bbf80ccd19df524, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 100
+  hp: 500
   speed: 40
   rotSpeed: 100
   tilt: 100
   camfollowSmooth: 500
-  camrotSmooth: 2
-  camHeight: 100
+  camrotSmooth: 0
+  camHeight: 180
 --- !u!114 &114000010495231842
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -376,13 +405,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponSelect: 0
+  aimingTime: 5
+  rayDistance: 0
+  aimSprite: {fileID: 4000010800403768}
+  aimMask:
+    serializedVersion: 2
+    m_Bits: 0
   gun:
     shell: {fileID: 4000010732676768, guid: 63185e00ca227cd4fa0696abd5f5b8d6, type: 2}
     shellDamage: 5
-    shellSpeed: 200
+    shellSpeed: 500
     interval: 0.05
     canReload: 0
     clip: 0
+    aiming: 0
     firstBsp: {fileID: 4000010856880998}
     secondBsp: {fileID: 4000012329151288}
     twoBsp: 1
@@ -392,10 +428,11 @@ MonoBehaviour:
   rocket:
     shell: {fileID: 4000012708702672, guid: 7911614d585d96e44b9094b5f93d3710, type: 2}
     shellDamage: 50
-    shellSpeed: 100
+    shellSpeed: 200
     interval: 0.4
     canReload: 1
     clip: 6
+    aiming: 0
     firstBsp: {fileID: 4000011195066122}
     secondBsp: {fileID: 4000012375571528}
     twoBsp: 1
@@ -409,9 +446,11 @@ MonoBehaviour:
     interval: 1
     canReload: 0
     clip: 0
+    aiming: 0
     firstBsp: {fileID: 0}
     secondBsp: {fileID: 0}
     twoBsp: 0
     shotSound: {fileID: 0}
     clipcounter: 0
     startReload: 0
+  aimingTransform: {fileID: 0}

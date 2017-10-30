@@ -21,7 +21,6 @@ public class Rocket : BulletsParent
 	void Start () {
 		tr = transform;
 		rb = GetComponent<Rigidbody>();
-		target = GameObject.FindGameObjectWithTag("Enemy");
 		}
 
 
@@ -40,6 +39,19 @@ public class Rocket : BulletsParent
 			}
 		rb.AddForce(tr.right*ballistic, ForceMode.Impulse);
 		//transform.RotateAround(tr.position, tr.TransformDirection(Vector3.up), Scatter*Time.deltaTime);
+		}
+
+	public override bool isAiming()
+		{
+		if(aiming)
+			return true;
+		Debug.Log("Returned false");
+		return false;
+		}
+
+	public override void GetTarget(GameObject target)
+		{
+		this.target = target;
 		}
 
 	public override void Shellsetting(float sp, float dm)
@@ -90,8 +102,6 @@ public class Rocket : BulletsParent
 */
 
 		rb.angularVelocity = tr.up * rotatingSpeed * value;
-
-
 		rb.velocity = transform.forward * speed;
 			}
 

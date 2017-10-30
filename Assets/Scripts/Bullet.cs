@@ -12,6 +12,11 @@ public class Bullet : BulletsParent {
 		tr = transform;
 	}
 
+	public override bool isAiming()
+		{
+		return false;
+		}
+
 	public override void Shellsetting(float sp, float dm)
 		{
 		damage = dm;

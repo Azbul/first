@@ -22,9 +22,9 @@ using System.Collections;
 	protected MainBehaviour bahaha;
 
 	//ВРЕМЕННЫЕ ПЕРЕМЕННЫЕ
-	public float viewRadius;
+	/*public float viewRadius;
 	public float viewAngle;
-	public LayerMask viewRadiusMask;
+	public LayerMask viewRadiusMask;*/
 
 	void Start() 
 		{
